@@ -188,7 +188,7 @@ figcaption {
   max-width: 1420px;
   margin-right: auto;
   margin-left: auto;
-  padding: 50px;
+  padding: 0px 100px;
   -webkit-justify-content: space-around;
   -ms-flex-pack: distribute;
   justify-content: space-around;
@@ -323,8 +323,7 @@ figcaption {
 }
 
 .section {
-  margin-right: 30px;
-  margin-left: 30px;
+  margin: 0px 100px;
 }
 
 .section.cc-contact {
@@ -575,10 +574,7 @@ figcaption {
 }
 
 .work-description {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   width: 100%;
   margin-bottom: 60px;
   -webkit-box-orient: vertical;
@@ -615,10 +611,10 @@ figcaption {
   grid-row-gap: 30px;
   grid-template-areas: "Area-3 Area-5"
     "Area-2 Area";
-  -ms-grid-columns: 2fr 30px 2fr;
-  grid-template-columns: 2fr 2fr;
-  -ms-grid-rows: auto 30px auto;
-  grid-template-rows: auto auto;
+  -ms-grid-columns: 2fr;
+  grid-template-columns: 2fr;
+  -ms-grid-rows: auto;
+  grid-template-rows: auto;
 }
 
 .carrer-headline-wrap {
@@ -663,18 +659,22 @@ figcaption {
 }
 
 .work-image.cc-work-1 {
+  display: none;
+  height: 460px;
   background-image: url('../images/3-Iphone-screen-white-resized3x.png');
   background-size: 439px;
   background-repeat: no-repeat;
 }
 
 .work-image.cc-work-2 {
+  display: none;
   background-image: url('../images/MATCHX-SOFRWARE.png');
   background-size: contain;
   background-repeat: no-repeat;
 }
 
 .work-image.cc-work-4 {
+  height: 460px;
   background-image: url('../images/opening.jpg');
   background-size: contain;
   background-repeat: no-repeat;
@@ -692,6 +692,7 @@ figcaption {
 }
 
 .work-image.cc-work-3 {
+  display: none;
   background-image: url('../images/DHX-home-folding-compressed.png');
   background-size: contain;
   background-repeat: no-repeat;
@@ -995,8 +996,8 @@ figcaption {
     ". . . .";
   -ms-grid-columns: 1fr 50px 1fr 50px 1fr 50px 1fr;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  -ms-grid-rows: auto 100px auto;
-  grid-template-rows: auto auto;
+  -ms-grid-rows: auto;
+  grid-template-rows: auto;
 }
 
 .project-overview-grid._1 {
@@ -1931,7 +1932,7 @@ figcaption {
   }
 
   .heading-jumbo {
-    font-size: 50px;
+    font-size: 40px;
     line-height: 64px;
   }
 
@@ -2450,43 +2451,10 @@ figcaption {
   grid-row-end: 2;
 }
 
-#w-node-_0befc76b-828c-2822-f9fa-f2c6de040bc4-2cdba55a {
+#w-node-efc73b2f-7232-0437-06f0-de6eece15db6-2cdba55a {
   -ms-grid-column: 1;
   grid-column-start: 1;
-  -ms-grid-column-span: 2;
-  grid-column-end: 3;
-  -ms-grid-row: 2;
-  grid-row-start: 2;
-  -ms-grid-row-span: 1;
-  grid-row-end: 3;
-}
-
-#w-node-_0befc76b-828c-2822-f9fa-f2c6de040bc9-2cdba55a {
-  -ms-grid-column: 3;
-  grid-column-start: 3;
-  -ms-grid-column-span: 2;
-  grid-column-end: 5;
-  -ms-grid-row: 2;
-  grid-row-start: 2;
-  -ms-grid-row-span: 1;
-  grid-row-end: 3;
-}
-
-#w-node-_338c52cd-462b-3186-c80e-7132d24dde74-2cdba55a {
-  -ms-grid-column: 1;
-  grid-column-start: 1;
-  -ms-grid-column-span: 2;
-  grid-column-end: 3;
-  -ms-grid-row: 1;
-  grid-row-start: 1;
-  -ms-grid-row-span: 1;
-  grid-row-end: 2;
-}
-
-#w-node-_338c52cd-462b-3186-c80e-7132d24dde79-2cdba55a {
-  -ms-grid-column: 3;
-  grid-column-start: 3;
-  -ms-grid-column-span: 2;
+  -ms-grid-column-span: 4;
   grid-column-end: 5;
   -ms-grid-row: 1;
   grid-row-start: 1;
@@ -2862,17 +2830,6 @@ figcaption {
   grid-column-start: 1;
   -ms-grid-column-span: 2;
   grid-column-end: 3;
-  -ms-grid-row: 2;
-  grid-row-start: 2;
-  -ms-grid-row-span: 1;
-  grid-row-end: 3;
-}
-
-#w-node-_0befc76b-828c-2822-f9fa-f2c6de040bc9-fad24819 {
-  -ms-grid-column: 3;
-  grid-column-start: 3;
-  -ms-grid-column-span: 2;
-  grid-column-end: 5;
   -ms-grid-row: 2;
   grid-row-start: 2;
   -ms-grid-row-span: 1;
@@ -3618,36 +3575,9 @@ figcaption {
     grid-row-end: 2;
   }
 
-  #w-node-_0befc76b-828c-2822-f9fa-f2c6de040bc4-2cdba55a {
+  #w-node-efc73b2f-7232-0437-06f0-de6eece15db6-2cdba55a {
     -ms-grid-column-span: 2;
     grid-column-end: 2;
-  }
-
-  #w-node-_0befc76b-828c-2822-f9fa-f2c6de040bc9-2cdba55a {
-    -ms-grid-column: 1;
-    grid-column-start: 1;
-    -ms-grid-row: 3;
-    grid-row-start: 3;
-    -ms-grid-column-span: 1;
-    grid-column-end: 2;
-    -ms-grid-row-span: 1;
-    grid-row-end: 4;
-  }
-
-  #w-node-_338c52cd-462b-3186-c80e-7132d24dde74-2cdba55a {
-    -ms-grid-column-span: 2;
-    grid-column-end: 2;
-  }
-
-  #w-node-_338c52cd-462b-3186-c80e-7132d24dde79-2cdba55a {
-    -ms-grid-column: 1;
-    grid-column-start: 1;
-    -ms-grid-row: 3;
-    grid-row-start: 3;
-    -ms-grid-column-span: 1;
-    grid-column-end: 2;
-    -ms-grid-row-span: 1;
-    grid-row-end: 4;
   }
 
   #w-node-_2fa54bf3-7a60-04f5-276c-c3eb79d47ee9-2cdba55a {
@@ -3892,17 +3822,6 @@ figcaption {
   #w-node-_0befc76b-828c-2822-f9fa-f2c6de040bc4-fad24819 {
     -ms-grid-column-span: 2;
     grid-column-end: 2;
-  }
-
-  #w-node-_0befc76b-828c-2822-f9fa-f2c6de040bc9-fad24819 {
-    -ms-grid-column: 1;
-    grid-column-start: 1;
-    -ms-grid-row: 3;
-    grid-row-start: 3;
-    -ms-grid-column-span: 1;
-    grid-column-end: 2;
-    -ms-grid-row-span: 1;
-    grid-row-end: 4;
   }
 
   #w-node-_338c52cd-462b-3186-c80e-7132d24dde74-fad24819 {
