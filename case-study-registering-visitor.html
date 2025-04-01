@@ -1,0 +1,217 @@
+<!DOCTYPE html><!--  This site was created in Webflow. https://webflow.com  --><!--  Last Published: Tue Apr 01 2025 12:01:16 GMT+0000 (Coordinated Universal Time)  -->
+<html data-wf-page="67d82f401830406aa6d606c1" data-wf-site="67d825485a7dde52a3e2467d">
+<head>
+  <meta charset="utf-8">
+  <title>UX Case Study – Streamlining Visitor Registration</title>
+  <meta content="Learn how Suhee Lee enhanced the visitor registration process with simplified forms, smart search, and privacy-first UX." name="description">
+  <meta content="UX Case Study – Streamlining Visitor Registration" property="og:title">
+  <meta content="Learn how Suhee Lee enhanced the visitor registration process with simplified forms, smart search, and privacy-first UX." property="og:description">
+  <meta content="UX Case Study – Streamlining Visitor Registration" property="twitter:title">
+  <meta content="Learn how Suhee Lee enhanced the visitor registration process with simplified forms, smart search, and privacy-first UX." property="twitter:description">
+  <meta property="og:type" content="website">
+  <meta content="summary_large_image" name="twitter:card">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <meta content="Webflow" name="generator">
+  <link href="css/normalize.css" rel="stylesheet" type="text/css">
+  <link href="css/webflow.css" rel="stylesheet" type="text/css">
+  <link href="css/suhees-beautiful-site.webflow.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
+  <script type="text/javascript">WebFont.load({  google: {    families: ["Varela Round:400","Roboto:100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic:vietnamese,cyrillic-ext,greek-ext,greek,latin-ext,latin,cyrillic"]  }});</script>
+  <script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script>
+  <link href="images/favicon.png" rel="shortcut icon" type="image/x-icon">
+  <link href="images/webclip.png" rel="apple-touch-icon">
+</head>
+<body>
+  <div data-collapse="none" data-animation="default" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="navbar w-nav">
+    <a href="index.html" class="brand w-nav-brand"><img src="images/webclip.png" width="80" alt=""></a>
+    <nav role="navigation" class="nav-menu w-nav-menu">
+      <a href="index.html" class="link-nav w-nav-link">Home</a>
+      <a href="about.html" class="link-nav w-nav-link">About</a>
+      <a href="contact.html" class="link-nav w-nav-link">Contact</a>
+    </nav>
+    <div class="w-nav-button">
+      <div class="w-icon-nav-menu"></div>
+    </div>
+  </div>
+  <div class="main-section">
+    <div class="_w-title">
+      <div class="_w-h1">
+        <div class="div-block-10">
+          <a href="index.html">‹ Back to Projects</a>
+        </div>
+        <h1 class="main-h1">Registering Visitor</h1>
+        <p class="paragraph-2">Redesigning Visitor Registration to Enhance Usability, Efficiency, and Privacy Compliance</p>
+      </div>
+    </div>
+    <div class="wide-background _01"></div>
+    <div class="proj_body-wrap">
+      <div class="proj_body w-richtext">
+        <h2>Overview</h2>
+        <p>The <strong>Register Visitor</strong> feature in <strong>MyQ</strong> is a system for managing visitor check-ins. The goal of this project was to <strong>simplify visitor search and registration</strong> by making the process more intuitive, reducing confusion, and improving search results.</p>
+        <p>This redesign focused on:</p>
+        <p>✅ <strong>Modernizing the search experience</strong></p>
+        <p><strong>‍</strong>✅ <strong>Support flexible search across name, email, and company</strong></p>
+        <p><strong>‍</strong>✅ <strong>Supporting group visitor registration</strong></p>
+        <p><strong>‍</strong>✅ <strong>Enhancing compliance for GDPR and different regional needs</strong></p>
+        <p>This redesign primarily benefits three user groups:</p>
+        <p><strong>🕵️‍♀️ Admin &amp; Gatekeepers</strong> – Responsible for managing visitor records, ensuring safety qualifications, and handling compliance.</p>
+        <p><strong>🕵️ Employees Hosting Visitors</strong> – Need a simple and quick way to register guests for appointments.</p>
+        <p><strong>🕵️ Visitors </strong>– Require a fast, smooth check-in process with minimal manual input.</p>
+        <p>‍</p>
+        <h2>The Problems</h2>
+        <p>Through research and user feedback, we identified <strong>critical pain points</strong> in the existing system:<br></p>
+        <h4><strong>❌ </strong>Search Experience Issues </h4>
+        <p>- Two separate search options in settings (email-based &amp; partial-name search) created confusion<br>- Search <strong>only worked with exact or partial matches</strong> (e.g., first 3 letters), leading to failed searches<br>- No <strong>auto-suggestions or fuzzy matching</strong>, making it <strong>harder for users to find visitors</strong></p>
+        <h4><strong>❌ Manual &amp; Inefficient Registration Process</strong></h4>
+        <p>- No <strong>group registration</strong>, forcing admins to register visitors <strong>one-by-one</strong><br>- Frequent visitors <strong>had to re-enter details manually</strong>, slowing down check-ins</p>
+        <h4><strong>❌ Privacy &amp; Compliance Challenges</strong></h4>
+        <p>- GDPR rules in <strong>Europe</strong> required <strong>strict data privacy</strong>, <strong>hiding visitor details</strong><br>- US users expected <strong>open search visibility</strong>, conflicting with GDPR constraints<br>- Email was a <strong>mandatory search field</strong>, but not all visitors had emails</p>
+        <p>These issues led to <strong>frustration, longer processing times, and compliance concerns.</strong></p>
+        <figure style="max-width:45%" class="w-richtext-align-center w-richtext-figure-type-image">
+          <div><img src="images/image-7-1.png" loading="lazy" alt=""></div>
+          <figcaption>(Image1) How it was implemented in classic view</figcaption>
+        </figure>
+        <figure class="w-richtext-align-center w-richtext-figure-type-image">
+          <div><img src="images/HazChem-Visitor-Registration---Frame-2.jpg" loading="lazy" alt=""></div>
+          <figcaption>Our heuristic analysis</figcaption>
+        </figure>
+        <figure class="w-richtext-align-center w-richtext-figure-type-image">
+          <div><img src="images/HazChem-Visitor-Registration---Frame-3.jpg" loading="lazy" alt=""></div>
+        </figure>
+        <p>‍</p>
+        <h2>Research &amp; User Journey</h2>
+        <h4><strong>Customer Insights: What We Learned from Users</strong></h4>
+        <p>To design a more efficient and user-friendly visitor registration system, we conducted research with safety engineers, gatekeepers, and frequent system users. This helped us understand how visitors were registered, the key challenges faced, and what improvements were needed.</p>
+        <h4><strong>1️⃣ Understanding the Current System</strong></h4>
+        <p>We identified <strong>three primary user groups</strong> involved in visitor registration:</p>
+        <p><strong>Gate Setup &amp; Workflow</strong>- Each site has at least one gatekeeper with a computer and printer, but they are safety personnel, not receptionists.<br>- One shared Quentic account is used by all gatekeepers, limiting customized role-based settings.<br>- Visitor pre-entry qualifications vary depending on the visitor’s activities, making manual verification necessary.<br>- High-traffic seasons, such as summer, bring 600-700 visitors per site, increasing the registration workload.</p>
+        <p><strong>Current Visitor Check-In Process<br></strong>- Visitors typically wait in queues to be checked in by a gatekeeper.<br>- Visitor details are stored in Word documents, making retrieval and record-keeping inefficient.<br>- Visitors must go through safety briefings, which are often handled in groups rather than individually.</p>
+        <p>2️⃣ <strong>Key Insights from Research</strong></p>
+        <p><strong>Time-Consuming Registration Process</strong></p>
+        <p>- Registering visitors manually takes too long, especially during peak hours.were required to enter an exact match (email or first three letters of the name).<br>-Automating the process using pre-registered visitor lists and allowing visitors to self-check-in using QR codes can significantly reduce wait times.<br></p>
+        <p><strong>Inefficient Visitor Record Management</strong></p>
+        <p>- Gatekeepers rely on Word documents for record-keeping instead of a structured digital database.<br>- Introducing a centralized system with searchable records and automatic visitor history tracking would improve efficiency.<br></p>
+        <p><strong>Preference for Mobile-Based Check-In</strong></p>
+        <p>- Many visitors prefer to scan a QR code and complete their pre-entry requirements on their phones rather than using on-site tablets.<br>- Improving mobile compatibility would allow visitors to complete safety briefings and qualifications digitally before arrival.</p>
+        <figure class="w-richtext-align-center w-richtext-figure-type-image">
+          <div><img src="images/Screenshot-2025-03-17-at-16.17.16.png" loading="lazy" alt=""></div>
+          <figcaption>User interview</figcaption>
+        </figure>
+        <p>‍</p>
+        <figure style="max-width:1690pxpx" class="w-richtext-align-fullwidth w-richtext-figure-type-image">
+          <div><img src="images/HazChem-Visitor-Registration---User-journey.jpg" loading="lazy" alt=""></div>
+          <figcaption>User journey</figcaption>
+        </figure>
+        <p>‍</p>
+        <p>‍</p>
+        <h2><strong>Design Process &amp; Iterations</strong></h2>
+        <h4><strong>HMW Questions (How Might We...)</strong></h4>
+        <p>To ideate potential solutions, we asked: <br>How might we make visitor search more flexible and intuitive?<br>How might we allow admins to register multiple visitors at once?<br>How might we improve search layout for better readability? <br>How might we balance privacy and search usability across different regions?<br></p>
+        <figure class="w-richtext-align-center w-richtext-figure-type-image">
+          <div><img src="images/HazChem-Visitor-Registration---Frame-4.jpg" loading="lazy" alt=""></div>
+        </figure>
+        <h4><strong>Key Design Decisions</strong></h4>
+        <p>✅ <strong>Smarter Search</strong> – A structured visitor database enables faster lookup and history tracking<br>✅ <strong>Faster Check-Ins</strong> – By allowing QR code-based self-registration, the redesign aims to reduce manual processing time.<br>✅ <strong>Real-time Suggestions &amp; Fuzzy Matching</strong> – Allowed <strong>partial input</strong> instead of requiring exact matches<br>✅ <strong>Modern Card-Based Results</strong> – Replaced <strong>cluttered grid format</strong> with <strong>structured, scannable results</strong><br>✅ <strong>Multi-Selection for Group Registration</strong> – Enabled admins to <strong>register multiple visitors at once</strong><br>✅ <strong>Privacy Compliance Settings</strong> – Gave admins the ability to <strong>toggle data visibility settings</strong> based on GDPR &amp; regional policies</p>
+        <p>‍</p>
+        <h2><strong>Ideation</strong></h2>
+        <figure style="max-width:5822pxpx" class="w-richtext-align-fullwidth w-richtext-figure-type-image">
+          <div><img src="images/HazChem-Visitor-Registration---Frame-23-1.jpg" loading="lazy" alt=""></div>
+        </figure>
+        <h4><strong>1️⃣ Visitor Search Visibility Settings</strong></h4>
+        <p>‍</p>
+        <figure style="max-width:45%" class="w-richtext-align-center w-richtext-figure-type-image">
+          <div><img src="images/Screenshot-2025-03-18-at-10.22.32.png" loading="lazy" alt=""></div>
+        </figure>
+        <p>‍<strong>Understanding the Problem</strong></p>
+        <p>- Users need flexible control over search permissions and data access restrictions while ensuring GDPR compliance.<br>- Some companies require full visitor visibility, while others must mask personal data like emails and phone numbers.</p>
+        <p><strong>Key Design Decisions</strong></p>
+        <p>- Granular search permissions – Users can enable/disable search by name, company, email, or phone to match company policies.<br>- Data masking controls – Users can limit visitor history and mask email/phone to comply with privacy regulations.<br>- Confirmation modals – Prevents accidental changes, ensuring users understand the impact of disabling a setting.</p>
+        <p><strong>Expected Impact</strong></p>
+        <p>✔ Gives admins full control over search visibility based on organizational needs.<br>✔ Ensures GDPR compliance while keeping search functionality flexible.<br>✔ Reduces confusion about which visitor data is accessible.</p>
+        <p>‍</p>
+        <h4><strong>2️⃣ Register Visitor – QR Code &amp; Manual Registration Options</strong></h4>
+        <p>‍</p>
+        <figure style="max-width:45%" class="w-richtext-align-center w-richtext-figure-type-image">
+          <div><img src="images/Screenshot-2025-03-18-at-10.25.40.png" loading="lazy" alt=""></div>
+        </figure>
+        <p><strong>Understanding the Problem</strong></p>
+        <p>- Companies needed multiple ways to register visitors based on different scenarios.<br>- Some visitors preferred self-registration, while others needed manual admin input.</p>
+        <p><strong>Key Design Decisions</strong></p>
+        <p>- QR Code Self-Registration – Allows visitors to enter their details on their own device, reducing admin workload.<br>- Manual Registration – Keeps traditional entry for visitors without digital access.<br>- Clear descriptions – Helps admins choose the right method depending on the visitor type.</p>
+        <p><strong>Expected Impact</strong></p>
+        <p>✔ Saves time by automating data entry via QR code registration.<br>✔ Provides flexibility for different visitor needs (self-registration vs. manual input).<br>✔ Ensures higher accuracy by letting visitors input their own details instead of relying on admins.</p>
+        <p>‍</p>
+        <h4>3️⃣ Register Visitor – Search </h4>
+        <p>‍</p>
+        <figure class="w-richtext-align-center w-richtext-figure-type-image">
+          <div><img src="images/Screenshot-2025-03-18-at-10.24.43.png" loading="lazy" alt=""></div>
+        </figure>
+        <p><strong>Understanding the Problem</strong></p>
+        <p>-Many users manage thousands of visitors in their system, making searching by a single field inefficient.<br>-The previous system required exact matches, which led to frequent failed searches when partial information was entered.<br>-Some visitors are registered with different variations of their name, company, or email, making a single search method unreliable.<br>- Users needed a faster way to filter and refine results instead of scrolling through long visitor lists.</p>
+        <h4><strong>Key Design Decisions</strong></h4>
+        <p>- Three dedicated search inputs to allow targeted filtering, making it more precise than a single search bar.<br>- Real-time search results ensure that users get immediate feedback, eliminating guesswork.<br>- Masked Emails for GDPR Compliance, ensuring privacy while keeping search effective.<br>- Manual Entry Below Search Results – If a visitor does not exist in the system, users can register them immediately without leaving the page.</p>
+        <h4><strong>Expected Impact</strong></h4>
+        <p>✔ Reduces failed lookups by allowing flexible search options based on available data.<br>✔ Speeds up visitor selection for companies with large databases.<br>✔ Eliminates unnecessary scrolling and re-entry, reducing admin workload.<br>✔ Enhances search precision with advanced filtering, leading to a faster, frustration-free experience.</p>
+        <p>‍</p>
+        <h2><strong>Expected Impact of the Redesign</strong></h2>
+        <p>The redesigned <strong>Register Visitor</strong> experience is built to streamline <strong>visitor check-in workflows</strong>, especially for organizations managing <strong>high visitor volumes</strong>. By reintroducing <strong>search functionality, optimizing the UI, and balancing compliance with usability</strong>, we expect to see the following benefits:</p>
+        <h4><strong>✔ Increased Efficiency in Visitor Search</strong></h4>
+        <p><strong>Before:</strong> Users often had to scroll through thousands of visitor records or rely on exact matches, causing frequent search failures.<strong><br>Now:</strong> The advanced search with Name, Company, and Email filters makes lookup fast and flexible, allowing users to find visitors even with partial details.</p>
+        <h4><strong>✔ Reduced Manual Data Entry</strong></h4>
+        <p><strong>Before:</strong> Users had to manually enter returning visitor details every time, even if the visitor had previously been registered.<strong><br>Now:</strong> The system suggests returning visitors, and pre-fills their details when available, significantly reducing repetitive input.</p>
+        <h4><strong>✔ Improved Compliance &amp; Privacy Control</strong></h4>
+        <p><strong>Before:</strong> Users had limited control over visitor data visibility, and GDPR restrictions sometimes hid critical information required for check-in.<strong><br>Now:</strong> The new system introduces role-based data visibility settings, allowing organizations to balance security with efficiency while adhering to GDPR regulations.</p>
+        <h4><strong>✔ Scalability for Future Growth</strong></h4>
+        <p><strong>Before:</strong> The existing system was not designed for batch visitor processing, forcing organizations to register visitors one at a time.<strong><br>Now:</strong> We have designed a structure that will support batch registration in future updates, ensuring scalability for high-volume visitor check-ins.</p>
+        <p>‍</p>
+        <h2><strong>Next Steps for Future Enhancements</strong></h2>
+        <p>The MVP release will focus on validating the core improvements, with further iterations planned based on user feedback. The key roadmap items include:</p>
+        <h4><strong>🔹 Phase 1: MVP Release &amp; Feedback Gathering</strong></h4>
+        <p>Deploy the new search functionality and visitor registration flow to key stakeholders.<br>Collect quantitative data (time spent on visitor lookup, manual entry rates).<br>Gather qualitative feedback from admins to identify areas for refinement.</p>
+        <h4><strong>🔹 Phase 2: Batch Registration &amp; Group Invite</strong></h4>
+        <p>Implement a bulk visitor upload feature, allowing organizations to register multiple visitors at once.<br>Introduce a group invite system, enabling organizations to send invitations in batches instead of registering each visitor manually.</p>
+        <h4><strong>🔹 Phase 3: QR-Based Self-Registration</strong></h4>
+        <p>Design and test a QR code-based registration system, allowing visitors to scan a QR code and input their details themselves.<br>This will significantly reduce admin workload while improving accuracy in visitor records.</p>
+        <h4><strong>🔹 Phase 4: AI-Powered Search Enhancements</strong></h4>
+        <p>Explore fuzzy matching and predictive search for even better lookup accuracy.<br>Introduce intelligent visitor suggestions based on past visits and frequent guest patterns.</p>
+        <p>‍</p>
+        <h2><strong>Final Thought </strong></h2>
+        <p>This redesign isn’t just about making visitor registration easier—it’s about making it smarter. By balancing search flexibility, automation, and compliance, the new system ensures that organizations can handle large-scale visitor management efficiently while maintaining security and user trust.</p>
+        <p>Would love to see how these improvements impact real-world workflows! Excited for the next phase!</p>
+        <p>‍</p>
+        <p>‍</p>
+      </div>
+    </div>
+  </div>
+  <div class="next-project">
+    <div class="alt-next">Other projects: </div>
+    <div class="portfolio-list-wrapper">
+      <div class="portfolio-list">
+        <div class="div-block-28">
+          <a href="case-study-design-system.html" class="big-link">Design System</a>
+        </div>
+        <div class="div-block-28">
+          <a href="case-study-enhancing-app-security.html" class="big-link">Enhancing App Security</a>
+        </div>
+        <div class="div-block-28">
+          <a href="case-study-designing-a-blockchain-wallet.html" class="big-link">Designing a Blockchain Wallet </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="div-block-27">
+    <div class="div-block-26"><img src="images/webclip.png" width="48" alt="" class="logo-footer">
+      <div class="wrapper-list-links">
+        <a href="https://www.instagram.com/illustrationbysuhee/" target="_blank" class="footer-links">Instagram</a>
+        <a href="https://www.linkedin.com/in/suhee-lee/" target="_blank" class="footer-links">Linkedin</a>
+        <a href="https://www.behance.net/suheelee8695" target="_blank" class="footer-links">Behance</a>
+      </div>
+      <p class="small-p">Designed &amp; developed by Suhee Lee<br>UX/UI Designer based in Berlin<br>© 2025 All rights reserved</p>
+    </div>
+  </div>
+  <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=67d825485a7dde52a3e2467d" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <script src="js/webflow.js" type="text/javascript"></script>
+</body>
+</html>
