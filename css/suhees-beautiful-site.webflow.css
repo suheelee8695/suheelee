@@ -564,6 +564,20 @@ figcaption {
   background-size: contain;
 }
 
+.wide-background._05 {
+  background-image: url('../images/Miner-Overview.png');
+  background-position: 50% 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.wide-background._06 {
+  background-image: url('../images/ezgif.com-gif-maker.gif');
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
 .div-block-10 {
   margin-bottom: 30px;
   display: flex;
@@ -1049,29 +1063,29 @@ figcaption {
   display: block;
 }
 
-.div-block-29 {
-  background-image: linear-gradient(#00000080, #00000080), url('../images/Screenshot-2025-04-01-at-13.15.07.png');
+.sncontroller {
+  background-image: linear-gradient(#00000080, #00000080), url('../images/Device-Information.png');
   background-position: 0 0, 50%;
   background-repeat: repeat, no-repeat;
-  background-size: auto, cover;
+  background-size: auto, contain;
   border-radius: 0;
   min-height: 50vh;
   max-height: 50vh;
 }
 
-.div-block-29:hover {
-  background-image: url('../images/Screenshot-2025-04-01-at-13.15.07.png');
+.sncontroller:hover {
+  background-image: url('../images/Device-Information.png');
   background-position: 50%;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
 }
 
-.div-block-29.image2 {
+.sncontroller.image2 {
   background-image: linear-gradient(#0000, #0000), url('../images/Screenshot-2025-04-01-at-13.17.33.png');
   background-size: auto, cover;
 }
 
-.div-block-30 {
+.digitsystem {
   background-image: linear-gradient(#00000080, #00000080), url('../images/Screenshot-2025-04-01-at-13.17.33.png');
   background-position: 0 0, 50%;
   background-repeat: repeat, no-repeat;
@@ -1081,7 +1095,7 @@ figcaption {
   max-height: 50vh;
 }
 
-.div-block-30:hover {
+.digitsystem:hover {
   background-image: url('../images/Screenshot-2025-04-01-at-13.17.33.png');
   background-position: 50%;
   background-repeat: no-repeat;
@@ -1103,6 +1117,47 @@ figcaption {
 
 .bold-text {
   color: #000;
+}
+
+.section-4 {
+  background-color: var(--white);
+  justify-content: flex-start;
+  align-items: flex-end;
+  height: 80vh;
+  min-height: 80vh;
+  display: flex;
+}
+
+.matchxdesktop {
+  background-image: linear-gradient(#00000080, #00000080), url('../images/ezgif.com-gif-maker.gif');
+  background-position: 0 0, 50%;
+  background-repeat: repeat, no-repeat;
+  background-size: auto, contain;
+  min-height: 50vh;
+  max-height: 50vh;
+}
+
+.matchxdesktop:hover {
+  background-image: url('../images/ezgif.com-gif-maker.gif');
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.lalalash {
+  background-image: linear-gradient(#00000080, #00000080), url('../images/Screenshot-2025-04-01-at-13.15.07.png');
+  background-position: 0 0, 0 0;
+  background-repeat: repeat, no-repeat;
+  background-size: auto, cover;
+  min-height: 50vh;
+  max-height: 50vh;
+}
+
+.lalalash:hover {
+  background-image: url('../images/Screenshot-2025-04-01-at-13.15.07.png');
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 @media screen and (max-width: 991px) {
