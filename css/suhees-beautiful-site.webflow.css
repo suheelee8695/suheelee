@@ -578,6 +578,13 @@ figcaption {
   background-size: contain;
 }
 
+.wide-background._07 {
+  background-image: url('../images/Trade-Liquidity.png');
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .div-block-10 {
   margin-bottom: 30px;
   display: flex;
@@ -1157,6 +1164,21 @@ figcaption {
   background-image: url('../images/Screenshot-2025-04-01-at-13.15.07.png');
   background-position: 0 0;
   background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.klin {
+  background-image: linear-gradient(#00000080, #00000080), url('../images/Trade-Liquidity.png');
+  background-position: 0 0, 50% 0;
+  background-repeat: repeat, repeat-x;
+  background-size: auto, cover;
+  min-height: 50vh;
+  max-height: 50vh;
+}
+
+.klin:hover {
+  background-image: url('../images/Trade-Liquidity.png');
+  background-position: 0 0;
   background-size: cover;
 }
 
