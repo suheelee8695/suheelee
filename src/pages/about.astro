@@ -1,0 +1,278 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="About · Suhee Lee" current="about" description="Get to know Suhee Lee, a Berlin-based Senior Product Designer who works at the boundary of design and engineering.">
+  <section class="about-hero">
+    <div class="blob" style="background: var(--accent-pink); width: 380px; height: 380px; top: 8%; right: -120px; opacity: 0.5;"></div>
+    <div class="blob" style="background: var(--accent-lime); width: 280px; height: 280px; bottom: -60px; left: -80px; opacity: 0.5;"></div>
+
+    <div class="container">
+      <p class="eyebrow">About me</p>
+      <h1 class="about-title">
+        Designer, AI tinkerer,<br/>
+        <em>illustrator, curious cook.</em>
+      </h1>
+    </div>
+  </section>
+
+  <section class="about-body container-narrow">
+    <div class="about-card">
+      <div class="about-row">
+        <div class="about-col">
+          <p class="big-p">
+            👋 I'm <strong>Suhee Lee</strong>, a Senior Product Designer with <strong>7+ years</strong>
+            across enterprise platforms, crypto wallets, and IoT dashboards. These days I sit at the
+            boundary between design and engineering: prototyping with AI, shipping pixel fixes
+            directly to production via Claude Code, and rebuilding how my team handles design-to-dev handoff.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div>
+          <h3 class="cap-title">How I think</h3>
+          <ul class="check-list">
+            <li><span class="bullet" style="background: var(--accent-orange);"></span><strong>I bias toward shipping.</strong> A scrappy v1 in production beats a polished v2 in Figma.</li>
+            <li><span class="bullet" style="background: var(--accent-lime);"></span><strong>Design systems are infrastructure, not artifacts.</strong> I treat them like a product: versioned, tokenized, with a roadmap.</li>
+            <li><span class="bullet" style="background: var(--accent-pink);"></span><strong>Designers belong closer to code.</strong> AI finally made this realistic, and I lean in hard.</li>
+            <li><span class="bullet" style="background: var(--accent-blue);"></span><strong>My best work is cross-functional.</strong> I'd rather pair with an engineer to ship a fix than write a spec doc about it.</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="cap-title">Tools & platforms</h3>
+          <div class="tools">
+            <span class="pill orange">Claude</span>
+            <span class="pill orange">Claude Code</span>
+            <span class="pill">Figma</span>
+            <span class="pill pink">Webflow</span>
+            <span class="pill">Storybook</span>
+            <span class="pill">GitLab</span>
+            <span class="pill">Miro</span>
+            <span class="pill blue">Adobe CS</span>
+            <span class="pill lime">Maze</span>
+            <span class="pill">Notion</span>
+            <span class="pill">Jira</span>
+          </div>
+
+          <h3 class="cap-title" style="margin-top: var(--s-7);">Beyond work</h3>
+          <p>
+            I cook 🍲, illustrate on
+            <a href="https://www.instagram.com/illustrationbysuhee/" target="_blank" rel="noopener">Instagram</a>,
+            and stay on the bleeding edge of AI tooling, partly out of curiosity, partly because
+            it keeps reshaping what a designer's job even is.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- AI WORKFLOW -->
+    <div class="ai-workflow">
+      <header class="aw-head">
+        <p class="eyebrow eyebrow-tight">A new design→dev workflow</p>
+        <h2>How I ship UX upgrades with AI.</h2>
+        <p class="aw-intro">
+          Small UX upgrades (tooltips, alignment, microcopy, accessibility fixes) used to sit in
+          the backlog waiting for engineering capacity. I built a loop that lets me ship them myself,
+          then rolled it out as a workflow for the broader design team.
+        </p>
+      </header>
+
+      <ol class="flow">
+        <li>
+          <span class="step">01</span>
+          <div>
+            <h4>Design audit</h4>
+            <p>I find the gap or rough edge, sometimes from user feedback, sometimes from my own crit.</p>
+          </div>
+        </li>
+        <li>
+          <span class="step">02</span>
+          <div>
+            <h4>Ticket</h4>
+            <p>Written up like any product issue, with screenshots and acceptance criteria.</p>
+          </div>
+        </li>
+        <li>
+          <span class="step">03</span>
+          <div>
+            <h4>Implement with Claude Code</h4>
+            <p>In our local env, against our Storybook, using the team's component library.</p>
+          </div>
+        </li>
+        <li>
+          <span class="step">04</span>
+          <div>
+            <h4>Open MR</h4>
+            <p>Goes through normal code review with engineering, same bar as any other PR.</p>
+          </div>
+        </li>
+        <li>
+          <span class="step">05</span>
+          <div>
+            <h4>Iterate &amp; ship</h4>
+            <p>Address feedback, merge, deploy. The loop closes faster than a backlog ticket ever would.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .about-hero {
+    position: relative;
+    overflow: hidden;
+    padding: var(--s-9) 0 var(--s-8);
+  }
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    background: var(--ink);
+    color: var(--bg);
+    padding: var(--s-1) var(--s-3);
+    border-radius: var(--r-pill);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin: 0 0 var(--s-5);
+  }
+  .about-title {
+    font-size: clamp(3rem, 9vw, 7rem);
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    margin: 0;
+  }
+  .about-title em {
+    font-style: italic;
+    color: var(--accent-orange);
+  }
+
+  .about-body { padding-bottom: var(--s-9); }
+  .about-card {
+    background: var(--bg-alt);
+    border-radius: var(--r-lg);
+    padding: var(--s-7);
+  }
+  .big-p {
+    font-size: 1.25rem;
+    line-height: 1.55;
+    margin: 0 0 var(--s-7);
+    color: var(--ink-soft);
+  }
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--s-7);
+  }
+  .cap-title {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--muted);
+    margin: 0 0 var(--s-4);
+    font-family: var(--font-body);
+  }
+  .check-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-3);
+  }
+  .check-list li {
+    position: relative;
+    padding-left: var(--s-6);
+    line-height: 1.55;
+  }
+  .bullet {
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+  }
+  .tools { display: flex; flex-wrap: wrap; gap: var(--s-2); }
+
+  /* AI workflow */
+  .ai-workflow {
+    margin-top: var(--s-8);
+    padding: var(--s-7);
+    border-radius: var(--r-lg);
+    background: var(--ink);
+    color: var(--bg);
+  }
+  .aw-head { margin-bottom: var(--s-7); }
+  .aw-head h2 {
+    color: var(--bg);
+    font-size: clamp(2rem, 4vw, 3.25rem);
+    margin: var(--s-3) 0 var(--s-4);
+  }
+  .eyebrow-tight {
+    display: inline-flex;
+    background: var(--accent-lime);
+    color: var(--ink);
+    padding: var(--s-1) var(--s-3);
+    border-radius: var(--r-pill);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin: 0;
+  }
+  .aw-intro {
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    max-width: 60ch;
+    color: color-mix(in srgb, var(--bg) 80%, transparent);
+    margin: 0;
+  }
+  .flow {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-3);
+  }
+  .flow li {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: var(--s-5);
+    align-items: start;
+    padding: var(--s-5) 0;
+    border-top: 1px solid color-mix(in srgb, var(--bg) 12%, transparent);
+  }
+  .flow li:last-child { border-bottom: 1px solid color-mix(in srgb, var(--bg) 12%, transparent); }
+  .step {
+    font-family: var(--font-display);
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: var(--accent-lime);
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+  .flow h4 {
+    color: var(--bg);
+    font-size: 1.25rem;
+    margin: 0 0 var(--s-2);
+    font-weight: 700;
+  }
+  .flow p {
+    margin: 0;
+    color: color-mix(in srgb, var(--bg) 75%, transparent);
+    font-size: 0.9375rem;
+    line-height: 1.55;
+  }
+
+  @media (max-width: 720px) {
+    .grid-2 { grid-template-columns: 1fr; gap: var(--s-6); }
+    .about-card { padding: var(--s-5); }
+    .ai-workflow { padding: var(--s-5); }
+    .flow li { grid-template-columns: 56px 1fr; gap: var(--s-3); }
+    .step { font-size: 1.75rem; }
+  }
+</style>

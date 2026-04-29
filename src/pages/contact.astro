@@ -1,0 +1,133 @@
+---
+import Base from '../layouts/Base.astro';
+
+const channels = [
+  { label: 'Email', handle: 'suheelee8695@gmail.com', href: "mailto:suheelee8695@gmail.com?subject=Let's%20connect!", emoji: '📮', accent: 'orange' },
+  { label: 'Instagram', handle: '@illustrationbysuhee', href: 'https://www.instagram.com/illustrationbysuhee/', emoji: '📷', accent: 'pink' },
+  { label: 'LinkedIn', handle: 'suhee-lee', href: 'https://www.linkedin.com/in/suhee-lee/', emoji: '💼', accent: 'blue' },
+  { label: 'Behance', handle: 'suheelee8695', href: 'https://www.behance.net/suheelee8695', emoji: '🎨', accent: 'lime' },
+];
+---
+<Base title="Contact · Suhee Lee" current="contact" description="Interested in working together? Reach out to Suhee Lee for product design collaborations or project inquiries.">
+  <section class="contact-hero container">
+    <p class="eyebrow">Let's talk</p>
+    <h1 class="contact-title">
+      Got a problem<br/>
+      worth <em>solving?</em>
+    </h1>
+    <p class="contact-sub">
+      I'm always open to meaningful design conversations, freelance opportunities,
+      or collaborations. Pick whichever channel suits you.
+    </p>
+  </section>
+
+  <section class="channels container">
+    <ul class="channel-list">
+      {channels.map(c => (
+        <li class={`channel accent-${c.accent}`}>
+          <a href={c.href} target={c.href.startsWith('mailto:') ? undefined : '_blank'} rel={c.href.startsWith('mailto:') ? undefined : 'noopener'}>
+            <div class="channel-meta">
+              <span class="emoji">{c.emoji}</span>
+              <span class="label">{c.label}</span>
+            </div>
+            <div class="handle">
+              {c.handle}
+              <span class="arrow">↗</span>
+            </div>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </section>
+</Base>
+
+<style>
+  .contact-hero { padding: var(--s-9) var(--s-5) var(--s-7); }
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    background: var(--ink);
+    color: var(--bg);
+    padding: var(--s-1) var(--s-3);
+    border-radius: var(--r-pill);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin: 0 0 var(--s-5);
+  }
+  .contact-title {
+    font-size: clamp(3rem, 9vw, 8rem);
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    margin: 0 0 var(--s-5);
+  }
+  .contact-title em {
+    font-style: italic;
+    color: var(--accent-orange);
+  }
+  .contact-sub {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    max-width: 56ch;
+    color: var(--ink-soft);
+  }
+
+  .channels { padding: var(--s-6) var(--s-5) var(--s-9); }
+  .channel-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .channel {
+    border-top: 2px solid var(--ink);
+    transition: background 0.3s var(--ease);
+  }
+  .channel:last-child { border-bottom: 2px solid var(--ink); }
+  .channel a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--s-5) var(--s-3);
+    gap: var(--s-4);
+    transition: padding 0.3s var(--ease);
+  }
+  .channel:hover { background: var(--bg-alt); }
+  .channel.accent-orange:hover { background: #FFE0CC; }
+  .channel.accent-pink:hover { background: #FFD4E5; }
+  .channel.accent-blue:hover { background: #DDE3FF; }
+  .channel.accent-lime:hover { background: #EAFAB0; }
+  .channel:hover a { padding-left: var(--s-5); padding-right: var(--s-5); }
+
+  .channel-meta {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--s-3);
+  }
+  .emoji { font-size: 1.5rem; }
+  .label {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+  .handle {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--s-2);
+    font-size: 1.0625rem;
+    color: var(--ink-soft);
+  }
+  .arrow {
+    font-size: 1.5rem;
+    transition: transform 0.3s var(--ease);
+  }
+  .channel:hover .arrow { transform: translate(4px, -4px); }
+
+  @media (max-width: 600px) {
+    .handle { display: none; }
+    .channel a { padding: var(--s-4) var(--s-2); }
+  }
+</style>

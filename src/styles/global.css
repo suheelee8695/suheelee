@@ -1,0 +1,219 @@
+/* ─────────────────────────────────────────────────────────────
+   Design tokens — Bold & Playful
+   ───────────────────────────────────────────────────────────── */
+:root {
+  /* Surfaces */
+  --bg: #FFF4E6;            /* warm cream */
+  --bg-alt: #FFE8C8;        /* deeper cream */
+  --ink: #0E0E0E;
+  --ink-soft: #2B2B2B;
+  --muted: #6A6256;
+
+  /* Accents */
+  --accent-orange: #FF5A1F;
+  --accent-pink: #FF6FA8;
+  --accent-lime: #D4FF3A;
+  --accent-blue: #1D3CFF;
+  --accent-violet: #7C3AED;
+
+  /* Type */
+  --font-display: "Bricolage Grotesque", "Inter", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+
+  /* Scale */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 24px;
+  --s-6: 32px;
+  --s-7: 48px;
+  --s-8: 64px;
+  --s-9: 96px;
+  --s-10: 144px;
+
+  /* Radius */
+  --r-sm: 8px;
+  --r-md: 16px;
+  --r-lg: 28px;
+  --r-pill: 999px;
+
+  /* Layout */
+  --container: 1240px;
+  --container-narrow: 780px;
+
+  /* Motion */
+  --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Reset
+   ───────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+img, svg { display: block; max-width: 100%; height: auto; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; cursor: pointer; border: none; background: none; }
+ul, ol { padding-left: 1.2em; }
+
+/* ─────────────────────────────────────────────────────────────
+   Base
+   ───────────────────────────────────────────────────────────── */
+body {
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--ink);
+  background: var(--bg);
+  font-feature-settings: "ss01", "cv11";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.02;
+  margin: 0 0 var(--s-4);
+  font-variation-settings: "wdth" 100;
+}
+
+h1 { font-size: clamp(3.5rem, 11vw, 9rem); letter-spacing: -0.04em; }
+h2 { font-size: clamp(2rem, 4vw, 3.25rem); letter-spacing: -0.03em; margin-top: var(--s-7); }
+h3 { font-size: clamp(1.5rem, 2.4vw, 2rem); margin-top: var(--s-6); }
+h4 { font-size: 1.25rem; margin-top: var(--s-5); }
+
+p { margin: 0 0 var(--s-4); }
+strong { font-weight: 600; }
+
+/* Links inside prose */
+.prose a {
+  color: var(--accent-orange);
+  border-bottom: 2px solid currentColor;
+  transition: color 0.2s var(--ease);
+}
+.prose a:hover { color: var(--accent-blue); }
+
+/* ─────────────────────────────────────────────────────────────
+   Layout helpers
+   ───────────────────────────────────────────────────────────── */
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--s-5);
+}
+.container-narrow {
+  max-width: var(--container-narrow);
+  margin: 0 auto;
+  padding: 0 var(--s-5);
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Buttons / pills
+   ───────────────────────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  padding: var(--s-3) var(--s-5);
+  border-radius: var(--r-pill);
+  background: var(--ink);
+  color: var(--bg);
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: transform 0.2s var(--ease), background 0.2s var(--ease);
+}
+.btn:hover { transform: translateY(-2px); background: var(--accent-orange); }
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--s-1) var(--s-3);
+  border-radius: var(--r-pill);
+  background: var(--ink);
+  color: var(--bg);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+.pill.lime { background: var(--accent-lime); color: var(--ink); }
+.pill.pink { background: var(--accent-pink); color: var(--ink); }
+.pill.blue { background: var(--accent-blue); color: var(--bg); }
+.pill.orange { background: var(--accent-orange); color: var(--bg); }
+
+/* ─────────────────────────────────────────────────────────────
+   Prose (case study body)
+   ───────────────────────────────────────────────────────────── */
+.prose {
+  max-width: 720px;
+  margin: 0 auto;
+  font-size: 1.0625rem;
+  line-height: 1.7;
+}
+.prose h2 { font-size: clamp(1.75rem, 3vw, 2.5rem); margin-top: var(--s-8); }
+.prose h3 { margin-top: var(--s-7); }
+.prose h4 { margin-top: var(--s-6); font-weight: 700; }
+.prose img { border-radius: var(--r-md); margin: var(--s-5) 0; box-shadow: 0 8px 32px rgba(14, 14, 14, 0.06); }
+.prose figure { margin: var(--s-6) 0; }
+.prose figcaption { font-size: 0.875rem; color: var(--muted); text-align: center; margin-top: var(--s-2); }
+
+.prose .figure-wide {
+  margin-left: calc(50% - 50vw + var(--s-5));
+  margin-right: calc(50% - 50vw + var(--s-5));
+  max-width: calc(100vw - var(--s-10));
+}
+@media (max-width: 900px) {
+  .prose .figure-wide {
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 100%;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Marquee tag (hero accent)
+   ───────────────────────────────────────────────────────────── */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.marquee {
+  overflow: hidden;
+  white-space: nowrap;
+  border-top: 2px solid var(--ink);
+  border-bottom: 2px solid var(--ink);
+  background: var(--accent-lime);
+  padding: var(--s-3) 0;
+}
+.marquee-track {
+  display: inline-block;
+  animation: marquee 28s linear infinite;
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 2.5vw, 2rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+.marquee-track span { padding: 0 var(--s-5); }
+.marquee-track .dot { display: inline-block; transform: translateY(-2px); color: var(--accent-orange); }
+
+/* ─────────────────────────────────────────────────────────────
+   Blob (decorative)
+   ───────────────────────────────────────────────────────────── */
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.55;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Selection
+   ───────────────────────────────────────────────────────────── */
+::selection { background: var(--accent-lime); color: var(--ink); }

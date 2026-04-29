@@ -1,0 +1,121 @@
+---
+import Base from './Base.astro';
+
+interface Props {
+  title: string;
+  tagline: string;
+  cover: string;
+  accent: string;
+  role?: string;
+  year?: string;
+  tags?: string[];
+}
+
+const { title, tagline, cover, accent, role, year, tags = [] } = Astro.props;
+---
+<Base title={`${title} · Suhee Lee`} description={tagline}>
+  <article class={`case-study accent-${accent}`}>
+    <header class="cs-hero container-narrow">
+      <a href="/" class="back-link">← Back to work</a>
+      <h1 class="cs-title">{title}</h1>
+      <p class="cs-tagline">{tagline}</p>
+      <dl class="cs-meta">
+        {role && (<><dt>Role</dt><dd>{role}</dd></>)}
+        {year && (<><dt>Year</dt><dd>{year}</dd></>)}
+        {tags.length > 0 && (<>
+          <dt>Tags</dt>
+          <dd class="cs-tags">{tags.map(t => <span class="pill">{t}</span>)}</dd>
+        </>)}
+      </dl>
+    </header>
+
+    <div class="cs-cover-wrap">
+      <div class="cs-cover">
+        <img src={cover} alt={`${title} cover`} loading="eager" />
+      </div>
+    </div>
+
+    <div class="cs-body container-narrow">
+      <div class="prose">
+        <slot />
+      </div>
+    </div>
+  </article>
+</Base>
+
+<style>
+  .case-study { padding-top: var(--s-7); }
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--muted);
+    margin-bottom: var(--s-5);
+    transition: color 0.2s var(--ease);
+  }
+  .back-link:hover { color: var(--ink); }
+
+  .cs-title {
+    font-size: clamp(3rem, 9vw, 6.5rem);
+    margin-bottom: var(--s-4);
+  }
+  .cs-tagline {
+    font-size: clamp(1.125rem, 1.6vw, 1.375rem);
+    line-height: 1.5;
+    color: var(--ink-soft);
+    max-width: 56ch;
+    margin-bottom: var(--s-6);
+  }
+
+  .cs-meta {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: var(--s-2) var(--s-5);
+    font-size: 0.9rem;
+    margin: 0 0 var(--s-6);
+    padding: var(--s-4) 0;
+    border-top: 1px solid color-mix(in srgb, var(--ink) 12%, transparent);
+    border-bottom: 1px solid color-mix(in srgb, var(--ink) 12%, transparent);
+  }
+  .cs-meta dt {
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.75rem;
+    color: var(--muted);
+    align-self: center;
+  }
+  .cs-meta dd { margin: 0; align-self: center; }
+  .cs-tags { display: flex; flex-wrap: wrap; gap: var(--s-2); }
+
+  .cs-cover-wrap {
+    margin: var(--s-8) auto var(--s-9);
+    padding: 0 var(--s-5);
+  }
+  .cs-cover {
+    max-width: var(--container);
+    margin: 0 auto;
+    border-radius: var(--r-lg);
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+    background: var(--bg-alt);
+    box-shadow: 0 24px 80px rgba(14, 14, 14, 0.12);
+    position: relative;
+  }
+  .cs-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Accent-tinted decorative ring on hero */
+  .accent-orange .cs-cover { box-shadow: 0 24px 80px rgba(255, 90, 31, 0.18); }
+  .accent-pink .cs-cover { box-shadow: 0 24px 80px rgba(255, 111, 168, 0.22); }
+  .accent-lime .cs-cover { box-shadow: 0 24px 80px rgba(212, 255, 58, 0.28); }
+  .accent-blue .cs-cover { box-shadow: 0 24px 80px rgba(29, 60, 255, 0.18); }
+  .accent-violet .cs-cover { box-shadow: 0 24px 80px rgba(124, 58, 237, 0.22); }
+
+  .cs-body { padding-bottom: var(--s-9); }
+</style>

@@ -1,0 +1,79 @@
+---
+import { getCollection, render } from 'astro:content';
+import CaseStudy from '../../layouts/CaseStudy.astro';
+
+export async function getStaticPaths() {
+  const all = await getCollection('work', ({ data }) => !data.draft);
+  return all.map(entry => ({
+    params: { slug: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+
+const all = await getCollection('work', ({ data }) => !data.draft);
+const sorted = all.sort((a, b) => a.data.order - b.data.order);
+const idx = sorted.findIndex(e => e.id === entry.id);
+const next = sorted[(idx + 1) % sorted.length];
+---
+<CaseStudy
+  title={entry.data.title}
+  tagline={entry.data.tagline}
+  cover={entry.data.cover}
+  accent={entry.data.accent}
+  role={entry.data.role}
+  year={entry.data.year}
+  tags={entry.data.tags}
+>
+  <Content />
+</CaseStudy>
+
+<section class="next-up">
+  <div class="container">
+    <a href={`/work/${next.id}`} class="next-card">
+      <span class="next-label">Next project →</span>
+      <h2 class="next-title">{next.data.title}</h2>
+      <p class="next-tagline">{next.data.tagline}</p>
+    </a>
+  </div>
+</section>
+
+<style>
+  .next-up {
+    background: var(--bg-alt);
+    padding: var(--s-9) 0;
+  }
+  .next-card {
+    display: block;
+    padding: var(--s-7) var(--s-6);
+    border-radius: var(--r-lg);
+    background: var(--ink);
+    color: var(--bg);
+    transition: transform 0.3s var(--ease), background 0.3s var(--ease);
+  }
+  .next-card:hover {
+    transform: translateY(-4px);
+    background: var(--accent-orange);
+  }
+  .next-label {
+    display: block;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    opacity: 0.7;
+    margin-bottom: var(--s-4);
+  }
+  .next-title {
+    font-size: clamp(2.5rem, 7vw, 5rem);
+    color: var(--bg);
+    margin: 0 0 var(--s-3);
+  }
+  .next-tagline {
+    font-size: 1.125rem;
+    opacity: 0.8;
+    max-width: 56ch;
+    margin: 0;
+  }
+</style>

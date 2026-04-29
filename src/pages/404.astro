@@ -1,0 +1,32 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="404 · Lost in the void" description="This page doesn't exist.">
+  <section class="not-found container">
+    <p class="huge">404.</p>
+    <h1>This page wandered off.</h1>
+    <p class="sub">The URL is broken, the project moved, or it was never there to begin with.</p>
+    <a href="/" class="btn">← Back to work</a>
+  </section>
+</Base>
+
+<style>
+  .not-found {
+    padding: var(--s-10) var(--s-5);
+    text-align: center;
+  }
+  .huge {
+    font-family: var(--font-display);
+    font-size: clamp(8rem, 25vw, 20rem);
+    line-height: 0.9;
+    letter-spacing: -0.05em;
+    margin: 0;
+    color: var(--accent-orange);
+  }
+  .not-found h1 { font-size: clamp(2rem, 5vw, 3.5rem); margin: var(--s-4) 0 var(--s-3); }
+  .sub {
+    color: var(--ink-soft);
+    max-width: 50ch;
+    margin: 0 auto var(--s-6);
+  }
+</style>
