@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://suheelee.com/sitemap-index.xml
