@@ -16,7 +16,18 @@ const work = defineCollection({
     featured: z.boolean().default(false),
     order: z.number().default(99),
     draft: z.boolean().default(false),
+    locked: z.boolean().default(false),
   }),
 });
 
-export const collections = { work };
+const writing = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/writing' }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    date: z.coerce.date(),
+    tags: z.array(z.string()).default([]),
+  }),
+});
+
+export const collections = { work, writing };

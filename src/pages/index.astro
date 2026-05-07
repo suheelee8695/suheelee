@@ -6,11 +6,6 @@ const all = await getCollection('work', ({ data }) => !data.draft);
 const sorted = all.sort((a, b) => a.data.order - b.data.order);
 const featured = sorted.filter(e => e.data.featured);
 const more = sorted.filter(e => !e.data.featured);
-
-const webflowProjects = [
-  { title: 'Lalalash ATL', url: 'https://www.lalalashatl.com/', img: '/images/Screenshot-2025-04-01-at-13.15.07.png' },
-  { title: 'Digit Systems', url: 'https://www.digitsystems.com/', img: '/images/Screenshot-2025-04-01-at-13.17.33.png' },
-];
 ---
 <Base title="Suhee Lee · Senior Product Designer" current="home">
 
@@ -22,18 +17,19 @@ const webflowProjects = [
 
     <div class="hero-inner container">
       <p class="eyebrow">
-        <span class="dot">●</span> Available for freelance + collabs
+        <span class="dot">●</span> Open to interesting collabs
       </p>
       <h1 class="hero-title">
         Hello, <em>you.</em><br/>
         I'm Suhee, a Senior Product Designer<br/>
-        working where design meets <span class="hl">code.</span>
+        doing <span class="hl">design engineering.</span>
       </h1>
       <p class="hero-sub">
-        Currently at Quentic (safety &amp; compliance software). I prototype with Claude,
-        ship small UI fixes directly via Claude Code in our Storybook + local env,
+        I build design systems and ship AI-assisted features for B2B SaaS.
+        Currently at Quentic (safety &amp; compliance software), where I prototype with Claude,
+        ship small UI fixes via Claude Code in our Storybook + local env,
         and built the design→dev workflow my team uses today.
-        7+ years across crypto, IoT, and enterprise. Berlin-based.
+        7+ years across enterprise, crypto, and IoT. Berlin-based.
       </p>
       <div class="hero-cta">
         <a href="#work" class="btn">See selected work ↓</a>
@@ -45,19 +41,19 @@ const webflowProjects = [
   <!-- MARQUEE -->
   <div class="marquee">
     <div class="marquee-track">
-      <span>UX research <span class="dot">●</span></span>
       <span>Design systems <span class="dot">●</span></span>
+      <span>AI/UX <span class="dot">●</span></span>
+      <span>Design engineering <span class="dot">●</span></span>
       <span>Product design <span class="dot">●</span></span>
       <span>Mobile + web <span class="dot">●</span></span>
       <span>Brand identity <span class="dot">●</span></span>
-      <span>Webflow <span class="dot">●</span></span>
       <span>Illustration <span class="dot">●</span></span>
-      <span>UX research <span class="dot">●</span></span>
       <span>Design systems <span class="dot">●</span></span>
+      <span>AI/UX <span class="dot">●</span></span>
+      <span>Design engineering <span class="dot">●</span></span>
       <span>Product design <span class="dot">●</span></span>
       <span>Mobile + web <span class="dot">●</span></span>
       <span>Brand identity <span class="dot">●</span></span>
-      <span>Webflow <span class="dot">●</span></span>
       <span>Illustration <span class="dot">●</span></span>
     </div>
   </div>
@@ -83,7 +79,9 @@ const webflowProjects = [
               </div>
               <h3 class="feature-title">{entry.data.title}</h3>
               <p class="feature-summary">{entry.data.summary}</p>
-              <span class="feature-cta">View case study →</span>
+              <span class="feature-cta">
+                {entry.data.locked ? '🔒 Unlock case study →' : 'View case study →'}
+              </span>
             </div>
           </a>
         ))}
@@ -95,7 +93,7 @@ const webflowProjects = [
   <section class="more-work">
     <div class="container">
       <header class="section-head">
-        <p class="eyebrow eyebrow-dark">02 · More UX/UI</p>
+        <p class="eyebrow eyebrow-dark">02 · More work</p>
         <h2 class="section-title">Other <em>projects.</em></h2>
       </header>
       <div class="more-grid">
@@ -112,28 +110,31 @@ const webflowProjects = [
     </div>
   </section>
 
-  <!-- WEBFLOW PROJECTS -->
-  <section class="webflow-work">
+  <!-- ALSO BUILDING -->
+  <section class="also-building">
     <div class="container">
-      <header class="section-head">
-        <p class="eyebrow eyebrow-dark">03 · Webflow builds</p>
-        <h2 class="section-title">Sites I've <em>shipped.</em></h2>
+      <header class="section-head section-head-center">
+        <p class="eyebrow eyebrow-dark">03 · Personal venture</p>
+        <h2 class="section-title">Also <em>building.</em></h2>
+        <p class="also-sub">Beyond product design, I run a small business in Berlin.</p>
       </header>
-      <div class="webflow-grid">
-        {webflowProjects.map(p => (
-          <a href={p.url} target="_blank" rel="noopener" class="webflow-card">
-            <div class="webflow-image">
-              <img src={p.img} alt={p.title} loading="lazy" />
-            </div>
-            <div class="webflow-meta">
-              <h4>{p.title}</h4>
-              <span>Visit live ↗</span>
-            </div>
-          </a>
-        ))}
-      </div>
+
+      <a href="https://einharu.com" target="_blank" rel="noopener" class="venture-card">
+        <div class="venture-image">
+          <img src="/images/einharu-tile.png" alt="einHaru Collective" loading="lazy" />
+        </div>
+        <div class="venture-text">
+          <h3 class="venture-title">einHaru Collective</h3>
+          <p class="venture-desc">
+            A Berlin-based boutique curating minimalist Korean fashion designers.
+            Bilingual EN/DE, EU-wide shipping. Built and run by me.
+          </p>
+          <span class="venture-cta">Visit live ↗</span>
+        </div>
+      </a>
     </div>
   </section>
+
 </Base>
 
 <style>
@@ -214,7 +215,7 @@ const webflowProjects = [
   .btn-ghost:hover { background: var(--ink); color: var(--bg); }
 
   /* SECTIONS */
-  .work, .more-work, .webflow-work {
+  .work, .more-work, .also-building {
     padding: var(--s-9) 0;
   }
   .section-head {
@@ -223,6 +224,10 @@ const webflowProjects = [
     flex-direction: column;
     align-items: flex-start;
     gap: var(--s-3);
+  }
+  .section-head-center {
+    align-items: center;
+    text-align: center;
   }
   .section-title {
     font-size: clamp(2.5rem, 6vw, 5rem);
@@ -349,32 +354,61 @@ const webflowProjects = [
     opacity: 0.8;
   }
 
-  /* WEBFLOW GRID */
-  .webflow-grid {
+  /* ALSO BUILDING */
+  .also-sub {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    margin: 0;
+    max-width: 48ch;
+  }
+  .venture-card {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: var(--s-5);
-  }
-  .webflow-card {
-    border-radius: var(--r-lg);
-    overflow: hidden;
-    background: var(--ink);
-    color: var(--bg);
-    transition: transform 0.3s var(--ease);
-  }
-  .webflow-card:hover { transform: translateY(-4px); }
-  .webflow-image {
-    aspect-ratio: 16 / 10;
-    overflow: hidden;
-  }
-  .webflow-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s var(--ease); }
-  .webflow-card:hover .webflow-image img { transform: scale(1.05); }
-  .webflow-meta {
-    display: flex;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--s-6);
     align-items: center;
-    justify-content: space-between;
-    padding: var(--s-4) var(--s-5);
+    max-width: 880px;
+    margin: 0 auto;
+    padding: var(--s-6);
+    border-radius: var(--r-lg);
+    background: var(--bg-alt);
+    transition: transform 0.3s var(--ease), background 0.3s var(--ease);
   }
-  .webflow-meta h4 { margin: 0; font-size: 1.25rem; color: var(--bg); }
-  .webflow-meta span { font-size: 0.875rem; color: var(--accent-lime); font-weight: 500; }
+  .venture-card:hover {
+    transform: translateY(-4px);
+    background: color-mix(in srgb, var(--bg-alt) 70%, var(--accent-orange));
+  }
+  .venture-image {
+    border-radius: var(--r-md);
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+    background: var(--bg);
+  }
+  .venture-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s var(--ease); }
+  .venture-card:hover .venture-image img { transform: scale(1.04); }
+
+  .venture-title {
+    font-size: clamp(1.5rem, 2.4vw, 2rem);
+    margin: 0 0 var(--s-3);
+  }
+  .venture-desc {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    margin: 0 0 var(--s-4);
+  }
+  .venture-cta {
+    font-weight: 600;
+    color: var(--ink);
+    border-bottom: 2px solid var(--accent-orange);
+    padding-bottom: 2px;
+  }
+
+  @media (max-width: 720px) {
+    .venture-card {
+      grid-template-columns: 1fr;
+      padding: var(--s-5);
+    }
+  }
+
 </style>

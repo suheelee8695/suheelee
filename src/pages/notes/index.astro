@@ -1,0 +1,108 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const all = await getCollection('writing');
+const sorted = all.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const fmt = (d: Date) =>
+  d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+---
+<Base title="Recent notes · Suhee Lee" current="notes" description="Notes on design systems, AI-assisted features, and design engineering, by Suhee Lee.">
+  <section class="writing-hero container-narrow">
+    <p class="eyebrow eyebrow-dark">Notes</p>
+    <h1 class="writing-title">Recent notes<em>.</em></h1>
+    <p class="writing-sub">
+      Short pieces from work I'm doing with design systems, AI features, and the
+      boundary between design and engineering.
+    </p>
+  </section>
+
+  <section class="writing-list container-narrow">
+    <ul class="entries">
+      {sorted.map(entry => (
+        <li class="entry">
+          <a href={`/notes/${entry.id}`} class="entry-link">
+            <time class="entry-date" datetime={entry.data.date.toISOString()}>{fmt(entry.data.date)}</time>
+            <h2 class="entry-title">{entry.data.title}</h2>
+            <p class="entry-desc">{entry.data.description}</p>
+            {entry.data.tags.length > 0 && (
+              <div class="entry-tags">
+                {entry.data.tags.map(t => <span class="pill">{t}</span>)}
+              </div>
+            )}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </section>
+</Base>
+
+<style>
+  .writing-hero {
+    padding: var(--s-9) 0 var(--s-7);
+  }
+  .writing-title {
+    font-size: clamp(3rem, 8vw, 6rem);
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    margin: var(--s-4) 0 var(--s-5);
+  }
+  .writing-title em {
+    font-style: italic;
+    color: var(--accent-orange);
+    font-family: var(--font-display);
+    font-weight: 700;
+  }
+  .writing-sub {
+    font-size: clamp(1rem, 1.3vw, 1.125rem);
+    line-height: 1.6;
+    max-width: 60ch;
+    color: var(--ink-soft);
+    margin: 0;
+  }
+
+  .writing-list { padding-bottom: var(--s-9); }
+  .entries {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-top: 1px solid color-mix(in srgb, var(--ink) 12%, transparent);
+  }
+  .entry { border-bottom: 1px solid color-mix(in srgb, var(--ink) 12%, transparent); }
+  .entry-link {
+    display: block;
+    padding: var(--s-6) 0;
+    transition: opacity 0.2s var(--ease);
+  }
+  .entry-link:hover .entry-title { color: var(--accent-orange); }
+  .entry-link:hover .entry-date { color: var(--ink); }
+
+  .entry-date {
+    display: block;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: var(--s-3);
+    transition: color 0.2s var(--ease);
+  }
+  .entry-title {
+    font-size: clamp(1.5rem, 2.6vw, 2.125rem);
+    margin: 0 0 var(--s-3);
+    transition: color 0.2s var(--ease);
+  }
+  .entry-desc {
+    font-size: 1.0625rem;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    margin: 0 0 var(--s-4);
+    max-width: 64ch;
+  }
+  .entry-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--s-2);
+  }
+</style>

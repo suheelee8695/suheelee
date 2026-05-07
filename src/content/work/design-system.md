@@ -1,7 +1,7 @@
 ---
 title: "Design System"
 tagline: "A fully customized MUI-based system that aligned design and dev with synced tokens."
-summary: "Built on top of MUI but fully customized to match our product's branding, tone, and UX. I redefined base components using design tokens, documented everything in Figma, and synced tokens directly to GitLab, speeding up handoff and ensuring UI consistency."
+summary: "A custom design system on top of MUI: tokens, components, Figma docs, and a token sync to GitLab so design and code never drifted. The work that turned design handoff from a meeting into a commit."
 cover: "/images/Screenshot-2025-03-27-at-11.10.02.png"
 tile: "/images/Design-system-cover-1.png"
 accent: "lime"
@@ -9,7 +9,7 @@ role: "Design Systems Lead"
 year: "2024"
 tags: ["Design system", "Figma", "MUI", "Tokens"]
 featured: true
-order: 2
+order: 4
 ---
 
 This design system was built on top of MUI, but fully customized to match our product's branding, tone, and UX needs. I redefined all base components (buttons, inputs, menus) using design tokens for consistent color, spacing, and typography. Everything was documented in Figma and structured to mirror our code system. I worked closely with developers to sync these tokens with GitLab, improving design-to-dev handoff and reducing redundant work across teams.

@@ -9,12 +9,15 @@ interface Props {
   role?: string;
   year?: string;
   tags?: string[];
+  locked?: boolean;
 }
 
-const { title, tagline, cover, accent, role, year, tags = [] } = Astro.props;
+const PASSWORD_HASH = '1027e8a1f20747cbc0d09d6b09b775002cc14ec61f600da159fb760c290498f1';
+
+const { title, tagline, cover, accent, role, year, tags = [], locked = false } = Astro.props;
 ---
 <Base title={`${title} · Suhee Lee`} description={tagline}>
-  <article class={`case-study accent-${accent}`}>
+  <article class={`case-study accent-${accent}`} data-locked={locked ? 'true' : 'false'}>
     <header class="cs-hero container-narrow">
       <a href="/" class="back-link">← Back to work</a>
       <h1 class="cs-title">{title}</h1>
@@ -29,19 +32,94 @@ const { title, tagline, cover, accent, role, year, tags = [] } = Astro.props;
       </dl>
     </header>
 
-    <div class="cs-cover-wrap">
-      <div class="cs-cover">
-        <img src={cover} alt={`${title} cover`} loading="eager" />
+    {locked && (
+      <div class="cs-gate container-narrow" data-gate>
+        <div class="cs-gate-card">
+          <span class="cs-gate-icon" aria-hidden="true">🔒</span>
+          <h2 class="cs-gate-title">This case study is private.</h2>
+          <p class="cs-gate-sub">
+            It contains screenshots from an in-production enterprise feature.
+            Enter the password to read it, or email me at
+            <a href="mailto:suheelee8695@gmail.com">suheelee8695@gmail.com</a> if you don't have one.
+          </p>
+          <form class="cs-gate-form" data-gate-form>
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              autocomplete="off"
+              required
+              data-gate-input
+            />
+            <button type="submit" class="btn">Unlock</button>
+          </form>
+          <p class="cs-gate-error" data-gate-error hidden>That password didn't work. Try again.</p>
+        </div>
       </div>
-    </div>
+    )}
 
-    <div class="cs-body container-narrow">
-      <div class="prose">
-        <slot />
+    <div class="cs-protected" data-protected hidden={locked}>
+      <div class="cs-cover-wrap">
+        <div class="cs-cover">
+          <img src={cover} alt={`${title} cover`} loading="eager" />
+        </div>
+      </div>
+
+      <div class="cs-body container-narrow">
+        <div class="prose">
+          <slot />
+        </div>
       </div>
     </div>
   </article>
 </Base>
+
+{locked && (
+  <script is:inline define:vars={{ PASSWORD_HASH, slug: title }}>
+    (() => {
+      const article = document.querySelector('.case-study[data-locked="true"]');
+      if (!article) return;
+      const gate = article.querySelector('[data-gate]');
+      const protectedEl = article.querySelector('[data-protected]');
+      const form = article.querySelector('[data-gate-form]');
+      const input = article.querySelector('[data-gate-input]');
+      const errorEl = article.querySelector('[data-gate-error]');
+      const storageKey = `cs-unlock:${slug}`;
+
+      const reveal = () => {
+        gate?.remove();
+        protectedEl?.removeAttribute('hidden');
+      };
+
+      if (sessionStorage.getItem(storageKey) === '1') {
+        reveal();
+        return;
+      }
+
+      const sha256 = async (text) => {
+        const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text));
+        return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
+      };
+
+      form?.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        errorEl?.setAttribute('hidden', '');
+        const value = (input?.value || '').trim();
+        if (!value) return;
+        const hash = await sha256(value);
+        if (hash === PASSWORD_HASH) {
+          sessionStorage.setItem(storageKey, '1');
+          reveal();
+        } else {
+          errorEl?.removeAttribute('hidden');
+          if (input) { input.value = ''; input.focus(); }
+        }
+      });
+
+      input?.focus();
+    })();
+  </script>
+)}
 
 <style>
   .case-study { padding-top: var(--s-7); }
@@ -118,4 +196,60 @@ const { title, tagline, cover, accent, role, year, tags = [] } = Astro.props;
   .accent-violet .cs-cover { box-shadow: 0 24px 80px rgba(124, 58, 237, 0.22); }
 
   .cs-body { padding-bottom: var(--s-9); }
+
+  /* PASSWORD GATE */
+  .cs-gate {
+    margin: var(--s-7) auto var(--s-9);
+  }
+  .cs-gate-card {
+    max-width: 520px;
+    margin: 0 auto;
+    padding: var(--s-7) var(--s-6);
+    border-radius: var(--r-lg);
+    background: var(--bg-alt);
+    text-align: center;
+  }
+  .cs-gate-icon {
+    display: inline-block;
+    font-size: 2rem;
+    margin-bottom: var(--s-3);
+  }
+  .cs-gate-title {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    margin: 0 0 var(--s-3);
+  }
+  .cs-gate-sub {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    margin: 0 0 var(--s-5);
+  }
+  .cs-gate-sub a { font-weight: 600; border-bottom: 1px solid currentColor; }
+  .cs-gate-form {
+    display: flex;
+    gap: var(--s-2);
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .cs-gate-form input {
+    flex: 1 1 240px;
+    min-width: 0;
+    padding: var(--s-3) var(--s-4);
+    border-radius: var(--r-pill);
+    border: 2px solid color-mix(in srgb, var(--ink) 15%, transparent);
+    background: var(--bg);
+    font: inherit;
+    font-size: 0.95rem;
+    color: var(--ink);
+    transition: border-color 0.2s var(--ease);
+  }
+  .cs-gate-form input:focus {
+    outline: none;
+    border-color: var(--ink);
+  }
+  .cs-gate-error {
+    margin: var(--s-3) 0 0;
+    font-size: 0.875rem;
+    color: #C0392B;
+  }
 </style>

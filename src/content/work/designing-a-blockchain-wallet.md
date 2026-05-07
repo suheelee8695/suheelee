@@ -1,15 +1,15 @@
 ---
 title: "Designing a Blockchain Wallet for DHX"
 tagline: "End-to-end design of a Polkadot-based crypto wallet: brand, onboarding, staking."
-summary: "Led the end-to-end design of a cryptocurrency wallet for DataHighway (DHX), creating a new brand identity and simplifying complex blockchain interactions like staking and account setup. The result: a sleek, beginner-friendly wallet built on Polkadot, designed to educate, empower, and earn trust."
+summary: "End-to-end design and brand identity for a Polkadot-based cryptocurrency wallet. Translated staking, account setup, and chain mechanics into something a first-time crypto user could actually finish, not just admire."
 cover: "/images/DHX-front.png"
 tile: "/images/ezgif.com-gif-maker-3.gif"
 accent: "violet"
 role: "Product Designer & Brand Lead"
 year: "2022"
 tags: ["Crypto", "Mobile", "Brand identity", "Onboarding"]
-featured: true
-order: 4
+featured: false
+order: 6
 ---
 
 ## Background

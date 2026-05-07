@@ -9,8 +9,8 @@ import Base from '../layouts/Base.astro';
     <div class="container">
       <p class="eyebrow">About me</p>
       <h1 class="about-title">
-        Designer, AI tinkerer,<br/>
-        <em>illustrator, curious cook.</em>
+        Designer who vibe codes,<br/>
+        <em>builder who designs.</em>
       </h1>
     </div>
   </section>
@@ -21,9 +21,9 @@ import Base from '../layouts/Base.astro';
         <div class="about-col">
           <p class="big-p">
             👋 I'm <strong>Suhee Lee</strong>, a Senior Product Designer with <strong>7+ years</strong>
-            across enterprise platforms, crypto wallets, and IoT dashboards. These days I sit at the
-            boundary between design and engineering: prototyping with AI, shipping pixel fixes
-            directly to production via Claude Code, and rebuilding how my team handles design-to-dev handoff.
+            across enterprise, crypto, and IoT. These days I'm doing design engineering at Quentic:
+            building design systems and shipping AI-assisted features for B2B SaaS, and I built
+            the design→dev workflow my team uses today (walked through below ↓).
           </p>
         </div>
       </div>
@@ -33,35 +33,39 @@ import Base from '../layouts/Base.astro';
           <h3 class="cap-title">How I think</h3>
           <ul class="check-list">
             <li><span class="bullet" style="background: var(--accent-orange);"></span><strong>I bias toward shipping.</strong> A scrappy v1 in production beats a polished v2 in Figma.</li>
-            <li><span class="bullet" style="background: var(--accent-lime);"></span><strong>Design systems are infrastructure, not artifacts.</strong> I treat them like a product: versioned, tokenized, with a roadmap.</li>
-            <li><span class="bullet" style="background: var(--accent-pink);"></span><strong>Designers belong closer to code.</strong> AI finally made this realistic, and I lean in hard.</li>
-            <li><span class="bullet" style="background: var(--accent-blue);"></span><strong>My best work is cross-functional.</strong> I'd rather pair with an engineer to ship a fix than write a spec doc about it.</li>
+            <li><span class="bullet" style="background: var(--accent-lime);"></span><strong>The strongest design calls are usually conceptual, not visual.</strong> The most important thing I designed for SDS Extract wasn't a screen. It was refusing to build a PDF viewer.</li>
+            <li><span class="bullet" style="background: var(--accent-pink);"></span><strong>Design systems are infrastructure, not artifacts.</strong> I treat them like a product: versioned, tokenized, with a roadmap.</li>
+            <li><span class="bullet" style="background: var(--accent-blue);"></span><strong>AI is a design problem with new rules, not a feature category.</strong> I'd rather write the manifesto than the style guide.</li>
+            <li><span class="bullet" style="background: var(--accent-violet);"></span><strong>My best work is cross-functional.</strong> I'd rather pair with an engineer or a PM to ship a fix than write a spec doc about it.</li>
           </ul>
         </div>
         <div>
-          <h3 class="cap-title">Tools & platforms</h3>
+          <h3 class="cap-title">Tools I actually use</h3>
           <div class="tools">
             <span class="pill orange">Claude</span>
             <span class="pill orange">Claude Code</span>
+            <span class="pill">Astro</span>
             <span class="pill">Figma</span>
-            <span class="pill pink">Webflow</span>
+            <span class="pill">Tokens Studio</span>
             <span class="pill">Storybook</span>
             <span class="pill">GitLab</span>
-            <span class="pill">Miro</span>
-            <span class="pill blue">Adobe CS</span>
-            <span class="pill lime">Maze</span>
-            <span class="pill">Notion</span>
             <span class="pill">Jira</span>
+            <span class="pill">Notion</span>
+            <span class="pill">Confluence</span>
           </div>
-
-          <h3 class="cap-title" style="margin-top: var(--s-7);">Beyond work</h3>
-          <p>
-            I cook 🍲, illustrate on
-            <a href="https://www.instagram.com/illustrationbysuhee/" target="_blank" rel="noopener">Instagram</a>,
-            and stay on the bleeding edge of AI tooling, partly out of curiosity, partly because
-            it keeps reshaping what a designer's job even is.
-          </p>
         </div>
+      </div>
+
+      <div class="beyond-row">
+        <h3 class="cap-title">Beyond work</h3>
+        <p class="beyond-p">
+          I cook 🍲, illustrate on
+          <a href="https://www.instagram.com/illustrationbysuhee/" target="_blank" rel="noopener">Instagram</a>,
+          and run <a href="https://einharu.com" target="_blank" rel="noopener">einHaru</a>,
+          a small Berlin boutique curating minimalist Korean fashion. I stay on the bleeding edge
+          of AI tooling, partly out of curiosity, partly because it keeps reshaping what a
+          designer's job even is.
+        </p>
       </div>
     </div>
 
@@ -103,7 +107,7 @@ import Base from '../layouts/Base.astro';
           <span class="step">04</span>
           <div>
             <h4>Open MR</h4>
-            <p>Goes through normal code review with engineering, same bar as any other PR.</p>
+            <p>Goes through normal code review with engineering, same bar as any other MR.</p>
           </div>
         </li>
         <li>
@@ -196,6 +200,17 @@ import Base from '../layouts/Base.astro';
     border-radius: 50%;
   }
   .tools { display: flex; flex-wrap: wrap; gap: var(--s-2); }
+
+  .beyond-row {
+    margin-top: var(--s-7);
+    padding-top: var(--s-6);
+    border-top: 1px solid color-mix(in srgb, var(--ink) 12%, transparent);
+  }
+  .beyond-p {
+    max-width: 70ch;
+    line-height: 1.6;
+    margin: 0;
+  }
 
   /* AI workflow */
   .ai-workflow {

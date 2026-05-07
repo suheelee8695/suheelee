@@ -1,15 +1,15 @@
 ---
 title: "Enhancing App Security"
 tagline: "Designing the user authentication experience for better security & usability."
-summary: "A complete redesign of the signup and authentication flow for a crypto wallet app: biometric login, 2FA, secure passcode setup, and recovery code management. The result is a more secure and user-friendly onboarding journey."
+summary: "Redesigned the signup and authentication flow for a crypto wallet: biometric login, 2FA, secure passcode setup, recovery codes. The goal was to make a high-stakes flow feel calm without softening the security model."
 cover: "/images/App-security-1.png"
 tile: "/images/App-security-1.png"
 accent: "blue"
 role: "Lead Product Designer"
 year: "2023"
 tags: ["Authentication", "Mobile", "Security", "Onboarding"]
-featured: true
-order: 3
+featured: false
+order: 5
 ---
 
 ## Overview

@@ -1,5 +1,5 @@
 /* ─────────────────────────────────────────────────────────────
-   Design tokens — Bold & Playful
+   Design tokens · Bold & Playful
    ───────────────────────────────────────────────────────────── */
 :root {
   /* Surfaces */
@@ -159,7 +159,13 @@ strong { font-weight: 600; }
 .prose h3 { margin-top: var(--s-7); }
 .prose h4 { margin-top: var(--s-6); font-weight: 700; }
 .prose img { border-radius: var(--r-md); margin: var(--s-5) 0; box-shadow: 0 8px 32px rgba(14, 14, 14, 0.06); }
-.prose figure { margin: var(--s-6) 0; }
+.prose figure {
+  margin: var(--s-6) 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.prose figure img { display: block; max-width: 100%; height: auto; }
 .prose figcaption { font-size: 0.875rem; color: var(--muted); text-align: center; margin-top: var(--s-2); }
 
 .prose .figure-wide {

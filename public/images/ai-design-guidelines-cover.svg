@@ -1,0 +1,37 @@
+<svg viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="AI assists. The user decides.">
+  <defs>
+    <radialGradient id="cover-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#7C3AED" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#7C3AED" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1600" height="900" fill="#FFF4E6"/>
+
+  <!-- soft accent blobs -->
+  <circle cx="1380" cy="220" r="300" fill="url(#cover-glow)"/>
+  <circle cx="180" cy="760" r="160" fill="#FF5A1F" fill-opacity="0.10"/>
+
+  <!-- eyebrow label -->
+  <g font-family="Inter, system-ui, -apple-system, sans-serif" font-size="20" font-weight="500" fill="#6A6256" letter-spacing="2">
+    <text x="100" y="100">HUMAN-CENTERED AI DESIGN GUIDELINES</text>
+  </g>
+
+  <!-- giant type -->
+  <g font-family="'Bricolage Grotesque', Inter, system-ui, -apple-system, sans-serif" font-weight="800" letter-spacing="-5">
+    <text x="100" y="430" font-size="200" fill="#0E0E0E">AI assists.</text>
+    <text x="100" y="650" font-size="170" fill="#0E0E0E" textLength="1400" lengthAdjust="spacingAndGlyphs">
+      <tspan>The user </tspan><tspan font-style="italic" fill="#7C3AED">decides.</tspan>
+    </text>
+  </g>
+
+  <!-- footer mark -->
+  <g font-family="Inter, system-ui, -apple-system, sans-serif" font-size="18" font-weight="500" fill="#6A6256">
+    <text x="100" y="820">Suhee Lee · Quentic · 2026</text>
+  </g>
+
+  <!-- sparkle accent -->
+  <g transform="translate(1430, 760)" fill="#7C3AED">
+    <path d="M40 0 L48 32 L80 40 L48 48 L40 80 L32 48 L0 40 L32 32 Z"/>
+  </g>
+</svg>

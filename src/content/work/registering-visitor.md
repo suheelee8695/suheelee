@@ -1,15 +1,15 @@
 ---
 title: "Registering Visitor"
-tagline: "Redesigning visitor registration for usability, efficiency, and privacy compliance."
-summary: "The Register Visitor feature in MyQ is a system for managing visitor check-ins. The goal: simplify visitor search and registration by making the process more intuitive, reducing confusion, and improving search results."
+tagline: "Visitor check-in for the Quentic platform: smarter search, clearer states."
+summary: "Redesigned visitor check-in for the Quentic platform: smarter search, clearer registration states, fewer dead ends. A daily-use enterprise feature that stopped feeling administrative."
 cover: "/images/My-Quentic-1.png"
 tile: "/images/Visitor-mockup-1.png"
 accent: "orange"
 role: "Lead Product Designer"
 year: "2024–2025"
 tags: ["UX research", "Enterprise", "GDPR", "Search"]
-featured: true
-order: 1
+featured: false
+order: 7
 ---
 
 ## Overview

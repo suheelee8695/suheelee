@@ -9,7 +9,7 @@ role: "Product Designer"
 year: "2022"
 tags: ["IoT", "Web platform", "Dashboard"]
 featured: false
-order: 5
+order: 8
 ---
 
 The following images highlight key features and UI components across different parts of the platform.

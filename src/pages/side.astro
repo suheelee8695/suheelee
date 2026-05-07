@@ -1,0 +1,100 @@
+---
+import Base from '../layouts/Base.astro';
+
+const webflowProjects = [
+  { title: 'Lalalash ATL', url: 'https://www.lalalashatl.com/', img: '/images/Screenshot-2025-04-01-at-13.15.07.png' },
+  { title: 'Digit Systems', url: 'https://www.digitsystems.com/', img: '/images/Screenshot-2025-04-01-at-13.17.33.png' },
+];
+---
+<Base title="Side projects · Suhee Lee" current="side" description="Small Webflow sites and side builds, outside my main product design work.">
+  <section class="side-hero">
+    <div class="blob" style="background: var(--accent-lime); width: 320px; height: 320px; top: -80px; right: -100px; opacity: 0.5;"></div>
+    <div class="container">
+      <p class="eyebrow eyebrow-dark">Side projects</p>
+      <h1 class="side-title">
+        Small things I've <em>shipped.</em>
+      </h1>
+      <p class="side-sub">
+        Webflow sites and side builds, separate from my product design work.
+        Kept here for anyone curious about what I do off the clock.
+      </p>
+    </div>
+  </section>
+
+  <section class="webflow-work">
+    <div class="container">
+      <div class="webflow-grid">
+        {webflowProjects.map(p => (
+          <a href={p.url} target="_blank" rel="noopener" class="webflow-card">
+            <div class="webflow-image">
+              <img src={p.img} alt={p.title} loading="lazy" />
+            </div>
+            <div class="webflow-meta">
+              <h4>{p.title}</h4>
+              <span>Visit live ↗</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .side-hero {
+    position: relative;
+    overflow: hidden;
+    padding: var(--s-9) 0 var(--s-7);
+  }
+  .side-title {
+    font-size: clamp(2.5rem, 7vw, 5.5rem);
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    margin: var(--s-4) 0 var(--s-5);
+    max-width: 18ch;
+  }
+  .side-title em {
+    font-style: italic;
+    color: var(--accent-orange);
+    font-family: var(--font-display);
+    font-weight: 700;
+  }
+  .side-sub {
+    font-size: clamp(1rem, 1.3vw, 1.125rem);
+    line-height: 1.6;
+    max-width: 60ch;
+    color: var(--ink-soft);
+    margin: 0;
+  }
+
+  .webflow-work {
+    padding: var(--s-7) 0 var(--s-9);
+  }
+  .webflow-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--s-5);
+  }
+  .webflow-card {
+    border-radius: var(--r-lg);
+    overflow: hidden;
+    background: var(--ink);
+    color: var(--bg);
+    transition: transform 0.3s var(--ease);
+  }
+  .webflow-card:hover { transform: translateY(-4px); }
+  .webflow-image {
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+  }
+  .webflow-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s var(--ease); }
+  .webflow-card:hover .webflow-image img { transform: scale(1.05); }
+  .webflow-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--s-4) var(--s-5);
+  }
+  .webflow-meta h4 { margin: 0; font-size: 1.25rem; color: var(--bg); }
+  .webflow-meta span { font-size: 0.875rem; color: var(--accent-lime); font-weight: 500; }
+</style>

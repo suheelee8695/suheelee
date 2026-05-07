@@ -9,7 +9,7 @@ role: "Product Designer"
 year: "2021"
 tags: ["IoT", "Desktop", "Configuration"]
 featured: false
-order: 6
+order: 9
 ---
 
 This project presents the desktop application interface for managing MatchX gateways (MXBOX UI), used in LoRa-based IoT networks. The UI was designed to offer clear system visibility and streamlined configuration workflows for network administrators working directly from desktop environments.
