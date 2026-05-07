@@ -16,6 +16,8 @@ order: 7
 
 The **Register Visitor** feature in **MyQ** is a system for managing visitor check-ins. The goal of this project was to **simplify visitor search and registration** by making the process more intuitive, reducing confusion, and improving search results.
 
+Shipped to all Quentic enterprise customers via the Modern Experience rollout — over 900 active tenants as of the February 2024 cutover, with full deprecation of the classic experience scheduled for mid-2026.
+
 This redesign focused on:
 
 - ✅ **Modernizing the search experience**
@@ -34,20 +36,13 @@ This redesign primarily benefits three user groups:
 Through research and user feedback, we identified **critical pain points** in the existing system.
 
 #### ❌ Search experience issues
-- Two separate search options in settings (email-based & partial-name search) created confusion
-- Search **only worked with exact or partial matches** (e.g., first 3 letters), leading to failed searches
-- No **auto-suggestions or fuzzy matching**, making it **harder to find visitors**
+Two separate search options in settings (email-based + partial-name) created confusion; search only worked with exact or partial matches; no auto-suggestions or fuzzy matching. *Pre-redesign analytics confirmed how broken this was: the new MyQ "Register visitor" entry point was used only 175 times by 121 unique users across 14 months — the lowest usage of any MyQ feature — while classic-view visitor registrations ran at 5,438 in a 7-week window. People were avoiding the new flow and falling back to classic.*
 
 #### ❌ Manual & inefficient registration
-- No **group registration**, forcing admins to register visitors **one-by-one**
-- Frequent visitors **had to re-enter details manually**, slowing down check-ins
+No group registration; frequent visitors had to re-enter details manually. *One customer told us their gatekeepers had built a workaround — registering each visitor with a single record instead of using factual appointment dates and times — because the proper flow was too slow to use during peak hours (600–700 visitors per high-season site).*
 
 #### ❌ Privacy & compliance challenges
-- GDPR rules in **Europe** required **strict data privacy**, hiding visitor details
-- US users expected **open search visibility**, conflicting with GDPR constraints
-- Email was a **mandatory search field**, but not all visitors had emails
-
-These issues led to **frustration, longer processing times, and compliance concerns.**
+GDPR rules in Europe required strict data privacy that hid visitor details; US users expected open search visibility, conflicting with GDPR. *A regional visibility toggle already existed in the product, but the search experience around it was clumsy. Part of this redesign was preserving and extending that control inside a search flow that worked for both regions, rather than re-inventing it.*
 
 <figure>
   <img src="/images/image-7-1.png" alt="Classic view implementation" />
@@ -65,32 +60,16 @@ These issues led to **frustration, longer processing times, and compliance conce
 
 ## Research & user journey
 
-#### Customer insights: what we learned from users
+Research drew on interviews with safety engineers and gatekeepers at an enterprise customer site, including a Team Lead Safety Engineer who told us:
 
-To design a more efficient and user-friendly visitor registration system, we conducted research with safety engineers, gatekeepers, and frequent system users. This helped us understand how visitors were registered, the key challenges faced, and what improvements were needed.
+> "Most of our visitors choose to scan the QR code with their own phone, instead of the provided tablets."
 
-#### 1️⃣ Understanding the current system
+Their site receives 600–700 visitors during summer high season, runs with at least one gatekeeper per gate (safety personnel, not receptionists), and shares a single Quentic account across all gatekeepers. Pre-Quentic, queues at the gate routinely exceeded 30 minutes per visitor; even after migrating to Quentic, the registration flow itself was the bottleneck — to the point that the customer had built a workaround that compromised data quality, and gatekeepers were occasionally letting in visitors with expired qualifications because the UI didn't surface qualification status clearly.
 
-We identified **three primary user groups** involved in visitor registration:
-
-**Gate setup & workflow**
+#### Gate setup & workflow
 - Each site has at least one gatekeeper with a computer and printer, but they are safety personnel, not receptionists.
-- One shared Quentic account is used by all gatekeepers, limiting customized role-based settings.
+- One shared Quentic account is used by all gatekeepers.
 - Visitor pre-entry qualifications vary depending on the visitor's activities, making manual verification necessary.
-- High-traffic seasons, such as summer, bring 600–700 visitors per site.
-
-**Current visitor check-in process**
-- Visitors typically wait in queues to be checked in by a gatekeeper.
-- Visitor details are stored in Word documents, making retrieval and record-keeping inefficient.
-- Visitors must go through safety briefings, often handled in groups rather than individually.
-
-#### 2️⃣ Key insights from research
-
-**Time-consuming registration process**: Registering visitors manually takes too long, especially during peak hours. Automating with pre-registered visitor lists and QR-code self-check-in can significantly reduce wait times.
-
-**Inefficient visitor record management**: Gatekeepers rely on Word documents instead of a structured digital database. A centralized system with searchable records and automatic visitor history tracking would improve efficiency.
-
-**Preference for mobile-based check-in**: Many visitors prefer to scan a QR code and complete pre-entry requirements on their phones rather than using on-site tablets.
 
 <figure>
   <img src="/images/Screenshot-2025-03-17-at-16.17.16.png" alt="User interview" />
@@ -183,23 +162,11 @@ To ideate potential solutions, we asked:
 - ✔ Speeds up selection in large databases
 - ✔ Eliminates unnecessary scrolling
 
-## Expected impact of the redesign
+## Impact
 
-#### ✔ Increased efficiency in visitor search
-**Before:** users scrolled through thousands of records or relied on exact matches.
-**Now:** Name, Company, and Email filters make lookup fast and flexible.
+**Post-launch metrics — pulling from etracker, will update.**
 
-#### ✔ Reduced manual data entry
-**Before:** repeat visitors had to be re-entered every time.
-**Now:** the system suggests returning visitors and pre-fills their details.
-
-#### ✔ Improved compliance & privacy control
-**Before:** limited control over visitor visibility; GDPR sometimes hid critical info.
-**Now:** role-based visibility settings balance security with efficiency.
-
-#### ✔ Scalability for future growth
-**Before:** no batch processing.
-**Now:** the structure supports batch registration in future updates.
+Update with: change in MyQ Register Visitor button usage compared to the 175-clicks/121-users baseline; reduction in search-related support tickets; gatekeeper time-to-register before vs after; group-registration adoption once that ships in Phase 2.
 
 ## Next steps
 
