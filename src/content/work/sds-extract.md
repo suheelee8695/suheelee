@@ -9,7 +9,7 @@ role: "Senior Product Designer"
 year: "2025"
 tags: ["AI/UX", "Enterprise SaaS", "Diff design", "Compliance"]
 featured: true
-order: 2
+order: 3
 locked: true
 ---
 

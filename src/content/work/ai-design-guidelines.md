@@ -9,7 +9,7 @@ role: "Senior Product Designer"
 year: "2026"
 tags: ["AI/UX", "Design system", "Governance", "Enterprise SaaS"]
 featured: true
-order: 1
+order: 2
 ---
 
 ## Overview
