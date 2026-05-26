@@ -223,3 +223,456 @@ strong { font-weight: 600; }
    Selection
    ───────────────────────────────────────────────────────────── */
 ::selection { background: var(--accent-lime); color: var(--ink); }
+
+/* ─────────────────────────────────────────────────────────────
+   Per-accent token — lets prose components inherit the right
+   accent colour without hardcoding it per case study
+   ───────────────────────────────────────────────────────────── */
+.accent-pink   { --cs-accent: var(--accent-pink); }
+.accent-orange { --cs-accent: var(--accent-orange); }
+.accent-lime   { --cs-accent: var(--accent-lime); }
+.accent-blue   { --cs-accent: var(--accent-blue); }
+.accent-violet { --cs-accent: var(--accent-violet); }
+
+/* ─────────────────────────────────────────────────────────────
+   Key Decisions callout
+   ───────────────────────────────────────────────────────────── */
+.prose .key-decisions {
+  background: color-mix(in srgb, var(--cs-accent, var(--accent-orange)) 10%, var(--bg));
+  border-radius: var(--r-lg);
+  padding: var(--s-5) var(--s-6);
+  margin: 0 0 var(--s-8);
+  border: 1.5px solid color-mix(in srgb, var(--cs-accent, var(--accent-orange)) 28%, transparent);
+}
+.prose .key-decisions-label {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  margin: 0 0 var(--s-3);
+}
+.prose .key-decisions ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-2);
+}
+.prose .key-decisions li {
+  display: flex;
+  gap: var(--s-3);
+  font-size: 1rem;
+  line-height: 1.45;
+}
+.prose .key-decisions li::before {
+  content: '→';
+  color: var(--cs-accent, var(--accent-orange));
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.prose .key-decisions a {
+  color: var(--ink);
+  border-bottom: 1.5px solid color-mix(in srgb, var(--cs-accent, var(--accent-orange)) 45%, transparent);
+  transition: color 0.2s var(--ease), border-color 0.2s var(--ease);
+}
+.prose .key-decisions a:hover {
+  color: var(--cs-accent, var(--accent-orange));
+  border-color: var(--cs-accent, var(--accent-orange));
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Pull quote
+   ───────────────────────────────────────────────────────────── */
+.prose .pull-quote {
+  border-left: 4px solid var(--cs-accent, var(--accent-orange));
+  background: color-mix(in srgb, var(--cs-accent, var(--accent-orange)) 7%, transparent);
+  margin: var(--s-7) 0;
+  padding: var(--s-5) var(--s-6);
+  border-radius: 0 var(--r-md) var(--r-md) 0;
+  quotes: none;
+}
+.prose .pull-quote p {
+  font-size: 1.175rem;
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  margin: 0;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Diagram wrapper + caption
+   ───────────────────────────────────────────────────────────── */
+.prose .diagram {
+  margin: var(--s-7) 0;
+}
+.prose .diagram-caption {
+  font-size: 0.875rem;
+  color: var(--muted);
+  text-align: center;
+  margin: var(--s-3) 0 0;
+  font-style: italic;
+}
+
+/* Two-domain architecture */
+.prose .domain-diagram {
+  border-radius: var(--r-md);
+  overflow: hidden;
+  border: 1.5px solid color-mix(in srgb, var(--ink) 10%, transparent);
+}
+.prose .dd-surface {
+  padding: var(--s-5) var(--s-6);
+}
+.prose .dd-ai {
+  background: color-mix(in srgb, var(--cs-accent, var(--accent-orange)) 10%, var(--bg));
+}
+.prose .dd-separator {
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+  padding: var(--s-2) var(--s-6);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  background: color-mix(in srgb, var(--ink) 5%, transparent);
+  border-top: 1px solid color-mix(in srgb, var(--ink) 10%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--ink) 10%, transparent);
+}
+.prose .dd-separator::before,
+.prose .dd-separator::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: color-mix(in srgb, var(--ink) 12%, transparent);
+}
+.prose .dd-user {
+  background: var(--bg-alt);
+}
+.prose .dd-badge {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--cs-accent, var(--accent-orange));
+  margin-bottom: var(--s-2);
+}
+.prose .dd-badge-muted {
+  color: var(--muted);
+}
+.prose .dd-surface p {
+  margin: 0 0 var(--s-1);
+  font-size: 0.975rem;
+  line-height: 1.5;
+}
+.prose .dd-note {
+  color: var(--muted) !important;
+  font-size: 0.875rem !important;
+  margin-bottom: 0 !important;
+}
+
+/* Cascade flow */
+.prose .cascade-flow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-2);
+  padding: var(--s-5);
+  background: var(--bg-alt);
+  border-radius: var(--r-md);
+}
+.prose .cf-step {
+  padding: var(--s-2) var(--s-3);
+  border-radius: var(--r-sm);
+  border: 1.5px solid color-mix(in srgb, var(--ink) 18%, transparent);
+  font-size: 0.9rem;
+  font-weight: 500;
+  white-space: nowrap;
+  background: var(--bg);
+}
+.prose .cf-affected {
+  border-color: color-mix(in srgb, var(--cs-accent, var(--accent-orange)) 40%, transparent);
+  color: var(--ink-soft);
+}
+.prose .cf-warn {
+  border-color: var(--cs-accent, var(--accent-orange));
+  background: color-mix(in srgb, var(--cs-accent, var(--accent-orange)) 12%, var(--bg));
+  font-weight: 700;
+}
+.prose .cf-arrow {
+  color: var(--muted);
+  font-size: 1.1rem;
+}
+.prose .cf-branch {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-1);
+}
+.prose .cf-choice {
+  padding: 3px var(--s-3);
+  border-radius: var(--r-sm);
+  font-size: 0.85rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.prose .cf-confirm {
+  background: color-mix(in srgb, var(--cs-accent, var(--accent-orange)) 14%, var(--bg));
+  border: 1.5px solid var(--cs-accent, var(--accent-orange));
+}
+.prose .cf-cancel {
+  background: var(--bg);
+  border: 1.5px solid color-mix(in srgb, var(--ink) 16%, transparent);
+  color: var(--muted);
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Events flow visualisation
+   ───────────────────────────────────────────────────────────── */
+.prose .events-flow {
+  margin: var(--s-6) 0;
+  border-radius: var(--r-md);
+  overflow: hidden;
+  border: 1.5px solid color-mix(in srgb, var(--ink) 10%, transparent);
+}
+.prose .ev-stage {
+  display: grid;
+  grid-template-columns: 190px 1fr;
+  gap: 0 var(--s-5);
+  padding: var(--s-4) var(--s-5);
+  border-bottom: 1px solid color-mix(in srgb, var(--ink) 8%, transparent);
+  align-items: start;
+}
+.prose .ev-stage:last-child { border-bottom: none; }
+.prose .ev-stage:nth-child(odd)  { background: var(--bg-alt); }
+.prose .ev-stage:nth-child(even) { background: var(--bg); }
+.prose .ev-label {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  line-height: 1.35;
+  padding-top: 2px;
+}
+.prose .ev-events {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-2);
+}
+.prose .ev-event {
+  display: flex;
+  align-items: baseline;
+  gap: var(--s-3);
+  flex-wrap: wrap;
+}
+.prose .ev-name {
+  font-family: monospace;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--cs-accent, var(--accent-orange));
+  background: color-mix(in srgb, var(--cs-accent, var(--accent-orange)) 12%, transparent);
+  padding: 2px 6px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+.prose .ev-desc {
+  font-size: 0.875rem;
+  color: var(--muted);
+  line-height: 1.4;
+}
+.prose .ev-empty {
+  font-size: 0.875rem;
+  color: color-mix(in srgb, var(--muted) 55%, transparent);
+  font-style: italic;
+}
+@media (max-width: 600px) {
+  .prose .ev-stage {
+    grid-template-columns: 1fr;
+    gap: var(--s-2) 0;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Participant preference strip
+   ───────────────────────────────────────────────────────────── */
+.prose .participant-strip {
+  margin: var(--s-6) 0;
+  padding: var(--s-5) var(--s-6);
+  background: var(--bg-alt);
+  border-radius: var(--r-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--s-4);
+}
+.prose .ps-dots {
+  display: flex;
+  gap: var(--s-3);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.prose .ps-dot {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+.prose .ps-a {
+  background: var(--cs-accent, var(--accent-orange));
+  color: var(--bg);
+}
+.prose .ps-b {
+  background: color-mix(in srgb, var(--cs-accent, var(--accent-orange)) 14%, var(--bg));
+  border: 2px solid var(--cs-accent, var(--accent-orange));
+  color: var(--ink);
+}
+.prose .ps-none {
+  background: var(--bg);
+  border: 2px solid color-mix(in srgb, var(--ink) 15%, transparent);
+  color: var(--muted);
+}
+.prose .ps-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2) var(--s-5);
+  justify-content: center;
+}
+.prose .ps-item {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+.prose .ps-item::before {
+  content: '';
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.prose .ps-item-a::before { background: var(--cs-accent, var(--accent-orange)); }
+.prose .ps-item-b::before {
+  background: color-mix(in srgb, var(--cs-accent, var(--accent-orange)) 14%, var(--bg));
+  border: 1.5px solid var(--cs-accent, var(--accent-orange));
+}
+.prose .ps-item-none::before {
+  background: var(--bg);
+  border: 1.5px solid color-mix(in srgb, var(--ink) 15%, transparent);
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Concept A vs B step comparison
+   ───────────────────────────────────────────────────────────── */
+.prose .concept-compare {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--s-4);
+}
+.prose .concept-col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-2);
+}
+.prose .cc-header {
+  margin-bottom: var(--s-1);
+  padding-bottom: var(--s-2);
+  border-bottom: 1.5px solid color-mix(in srgb, var(--ink) 10%, transparent);
+}
+.prose .cc-label {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-bottom: 2px;
+}
+.prose .cc-sub {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+.prose .cc-step {
+  padding: var(--s-3) var(--s-4);
+  border: 1.5px solid color-mix(in srgb, var(--ink) 14%, transparent);
+  border-radius: var(--r-sm);
+  font-size: 0.875rem;
+  background: var(--bg);
+  line-height: 1.4;
+}
+.prose .cc-step-edit {
+  border-color: var(--cs-accent, var(--accent-orange));
+  background: color-mix(in srgb, var(--cs-accent, var(--accent-orange)) 10%, var(--bg));
+  font-weight: 500;
+}
+.prose .cc-step-dashed {
+  border-style: dashed;
+}
+.prose .cc-tag {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: color-mix(in srgb, var(--cs-accent, var(--accent-orange)) 80%, var(--ink));
+  margin-top: 3px;
+}
+@media (max-width: 520px) {
+  .prose .concept-compare { grid-template-columns: 1fr; }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   What shipped: stat strip
+   ───────────────────────────────────────────────────────────── */
+.prose .stat-strip {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: var(--s-6) var(--s-5);
+  background: var(--bg-alt);
+  border-radius: var(--r-lg);
+  border: 1.5px solid color-mix(in srgb, var(--cs-accent, var(--accent-orange)) 22%, transparent);
+  margin: var(--s-6) 0;
+}
+.prose .stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--s-1);
+  text-align: center;
+}
+.prose .stat-num {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 3.75rem);
+  font-weight: 800;
+  line-height: 1;
+  color: var(--cs-accent, var(--accent-orange));
+  letter-spacing: -0.04em;
+}
+.prose .stat-label {
+  font-size: 0.78rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+}
+.prose .stat-div {
+  width: 1px;
+  height: 52px;
+  background: color-mix(in srgb, var(--ink) 12%, transparent);
+  flex-shrink: 0;
+}
+@media (max-width: 480px) {
+  .prose .stat-strip { flex-direction: column; gap: var(--s-5); }
+  .prose .stat-div { width: 48px; height: 1px; }
+}
