@@ -1,7 +1,7 @@
 ---
 title: "AI-Assisted 5 Whys"
 tagline: "Bringing a methodology into the platform without taking it away from the user."
-summary: "An AI-assisted root cause analysis feature for Quentic's Investigations module. A guided wizard turns case data into a structured 5 Whys analysis, then hands the result back to the user as an editable grid. The case study is in the rules: when AI runs, what it warns the user about, and how editing one cause cascades through the rest."
+summary: "An AI-assisted root cause analysis feature for Quentic's Investigations module. A guided wizard turns case data into a structured 5 Whys analysis, then hands the result back to the user as an editable grid. The case study covers the decisive calls: why AI gets its own surface, what the research said versus what shipped, and how every design decision is wired to a measurement."
 cover: "/images/5-whys-cover.png"
 tile: "/images/5-whys-step3.png"
 accent: "pink"
