@@ -9,8 +9,8 @@ role: "Senior Product Designer"
 year: "2026"
 tags: ["AI/UX", "Enterprise SaaS", "Wizard pattern", "Workflow design"]
 featured: true
-order: 3
-locked: true
+order: 1
+locked: false
 ---
 
 <div class="key-decisions">
